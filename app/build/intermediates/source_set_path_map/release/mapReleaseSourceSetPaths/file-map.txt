@@ -1,0 +1,78 @@
+com.noteflow.app-coil-base-2.6.0-0 C:\Users\Valuka\.gradle\caches\transforms-4\01dfe684bb089e91668118fc6bd05924\transformed\coil-base-2.6.0\res
+com.noteflow.app-core-remoteviews-1.1.0-1 C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\res
+com.noteflow.app-animation-core-release-2 C:\Users\Valuka\.gradle\caches\transforms-4\0aa94228117f12d43e87b05a3cd75ebe\transformed\animation-core-release\res
+com.noteflow.app-profileinstaller-1.3.1-3 C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\res
+com.noteflow.app-work-runtime-2.9.1-4 C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\res
+com.noteflow.app-datastore-preferences-1.0.0-5 C:\Users\Valuka\.gradle\caches\transforms-4\1e87a9ec2855446f3c78294c73c9eb3a\transformed\datastore-preferences-1.0.0\res
+com.noteflow.app-foundation-release-6 C:\Users\Valuka\.gradle\caches\transforms-4\243f528b9b2308be770cafd9f2a3310f\transformed\foundation-release\res
+com.noteflow.app-activity-ktx-1.9.1-7 C:\Users\Valuka\.gradle\caches\transforms-4\2c208efc4445777580d092dc8c0ff577\transformed\activity-ktx-1.9.1\res
+com.noteflow.app-lifecycle-process-2.8.4-8 C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\res
+com.noteflow.app-lifecycle-livedata-core-2.8.4-9 C:\Users\Valuka\.gradle\caches\transforms-4\321fb826f70b53b1ef4001d4ccc6a4f2\transformed\lifecycle-livedata-core-2.8.4\res
+com.noteflow.app-room-runtime-2.6.1-10 C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\res
+com.noteflow.app-lifecycle-viewmodel-release-11 C:\Users\Valuka\.gradle\caches\transforms-4\34d0730ddb12496879242705d984df12\transformed\lifecycle-viewmodel-release\res
+com.noteflow.app-lifecycle-runtime-release-12 C:\Users\Valuka\.gradle\caches\transforms-4\3572c98c80bf007c358aabbea4d63ad6\transformed\lifecycle-runtime-release\res
+com.noteflow.app-material-1.12.0-13 C:\Users\Valuka\.gradle\caches\transforms-4\38be1f04a714dfee07e2bd1c57595bfb\transformed\material-1.12.0\res
+com.noteflow.app-navigation-runtime-ktx-2.7.7-14 C:\Users\Valuka\.gradle\caches\transforms-4\396187c6e8dab929bdae0d3253e40bb5\transformed\navigation-runtime-ktx-2.7.7\res
+com.noteflow.app-material-icons-core-release-15 C:\Users\Valuka\.gradle\caches\transforms-4\3a7553b7533acd55d62ab60694bd8e03\transformed\material-icons-core-release\res
+com.noteflow.app-core-runtime-2.2.0-16 C:\Users\Valuka\.gradle\caches\transforms-4\3b4cbc485de508abdcc6b67de782fc42\transformed\core-runtime-2.2.0\res
+com.noteflow.app-drawerlayout-1.1.1-17 C:\Users\Valuka\.gradle\caches\transforms-4\3ba58589478606891e7275b5d24dfbeb\transformed\drawerlayout-1.1.1\res
+com.noteflow.app-navigation-compose-2.7.7-18 C:\Users\Valuka\.gradle\caches\transforms-4\435811e7db64baa3c33787b801c6b4fd\transformed\navigation-compose-2.7.7\res
+com.noteflow.app-room-ktx-2.6.1-19 C:\Users\Valuka\.gradle\caches\transforms-4\4846b42d71b9682bc33dd8f717247987\transformed\room-ktx-2.6.1\res
+com.noteflow.app-recyclerview-1.1.0-20 C:\Users\Valuka\.gradle\caches\transforms-4\4b8d6862b1f8318fe8a98ce4395f0e39\transformed\recyclerview-1.1.0\res
+com.noteflow.app-runtime-saveable-release-21 C:\Users\Valuka\.gradle\caches\transforms-4\5373f9c4ad0a3edc85bee31e8d8d77dc\transformed\runtime-saveable-release\res
+com.noteflow.app-cardview-1.0.0-22 C:\Users\Valuka\.gradle\caches\transforms-4\53d3401b50d0a9dde2683e4195f4e0fa\transformed\cardview-1.0.0\res
+com.noteflow.app-savedstate-ktx-1.2.1-23 C:\Users\Valuka\.gradle\caches\transforms-4\5679e22aad5f3ef3b1890e7aa9fc4ab9\transformed\savedstate-ktx-1.2.1\res
+com.noteflow.app-appcompat-1.7.0-24 C:\Users\Valuka\.gradle\caches\transforms-4\5682dd3d3d3b3736c5d07378bfd9dfe7\transformed\appcompat-1.7.0\res
+com.noteflow.app-coordinatorlayout-1.1.0-25 C:\Users\Valuka\.gradle\caches\transforms-4\5865c89a2b17033ecc8ce22a9748a524\transformed\coordinatorlayout-1.1.0\res
+com.noteflow.app-glance-appwidget-1.1.0-26 C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\res
+com.noteflow.app-foundation-layout-release-27 C:\Users\Valuka\.gradle\caches\transforms-4\639d362069d3e1ad8dcba21c83e7453d\transformed\foundation-layout-release\res
+com.noteflow.app-work-runtime-ktx-2.9.1-28 C:\Users\Valuka\.gradle\caches\transforms-4\6534b771720e0aeffb21750347f7343c\transformed\work-runtime-ktx-2.9.1\res
+com.noteflow.app-ui-text-release-29 C:\Users\Valuka\.gradle\caches\transforms-4\6a412828cda80e5ee353751e77a7c09b\transformed\ui-text-release\res
+com.noteflow.app-lifecycle-service-2.8.4-30 C:\Users\Valuka\.gradle\caches\transforms-4\6b6d1f8009c71f3e7ab7f2e496d392f2\transformed\lifecycle-service-2.8.4\res
+com.noteflow.app-viewpager2-1.0.0-31 C:\Users\Valuka\.gradle\caches\transforms-4\6bb004362e7264cf6e4c2a786bdaf9fe\transformed\viewpager2-1.0.0\res
+com.noteflow.app-ui-tooling-preview-release-32 C:\Users\Valuka\.gradle\caches\transforms-4\6d5e28f5575c3d11687ada3aa6a00f6c\transformed\ui-tooling-preview-release\res
+com.noteflow.app-ui-unit-release-33 C:\Users\Valuka\.gradle\caches\transforms-4\71403411fa14cee0ccf56b67f14490f3\transformed\ui-unit-release\res
+com.noteflow.app-transition-1.5.0-34 C:\Users\Valuka\.gradle\caches\transforms-4\72bb5f57dac9b92a861488ca9b142dc8\transformed\transition-1.5.0\res
+com.noteflow.app-lifecycle-runtime-ktx-release-35 C:\Users\Valuka\.gradle\caches\transforms-4\739e5bc0c07cb158223a5d5686d375b6\transformed\lifecycle-runtime-ktx-release\res
+com.noteflow.app-ui-release-36 C:\Users\Valuka\.gradle\caches\transforms-4\7a7c935af36228e4d0507fa5e15344b6\transformed\ui-release\res
+com.noteflow.app-runtime-release-37 C:\Users\Valuka\.gradle\caches\transforms-4\7cb4d70bc8dce8c244de576ac198624d\transformed\runtime-release\res
+com.noteflow.app-material-icons-extended-release-38 C:\Users\Valuka\.gradle\caches\transforms-4\81b9fca98bc9d93c219a5664ec56a2b5\transformed\material-icons-extended-release\res
+com.noteflow.app-fragment-1.5.4-39 C:\Users\Valuka\.gradle\caches\transforms-4\87ca18e0ed21880ba88f5359876ea393\transformed\fragment-1.5.4\res
+com.noteflow.app-appcompat-resources-1.7.0-40 C:\Users\Valuka\.gradle\caches\transforms-4\899dac85c283ee07a288ff77b0ff2354\transformed\appcompat-resources-1.7.0\res
+com.noteflow.app-glance-material3-1.1.0-41 C:\Users\Valuka\.gradle\caches\transforms-4\89c8bfe2a5b03b415b1683e92f66eefd\transformed\glance-material3-1.1.0\res
+com.noteflow.app-emoji2-1.3.0-42 C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\res
+com.noteflow.app-navigation-common-ktx-2.7.7-43 C:\Users\Valuka\.gradle\caches\transforms-4\938d43e392aa6764573d52ba27c67c88\transformed\navigation-common-ktx-2.7.7\res
+com.noteflow.app-activity-compose-1.9.1-44 C:\Users\Valuka\.gradle\caches\transforms-4\94e8a3606e09ec691d3175f02c9fa5cd\transformed\activity-compose-1.9.1\res
+com.noteflow.app-material3-release-45 C:\Users\Valuka\.gradle\caches\transforms-4\a0abdf354e700bcaac1126606a1fdc0d\transformed\material3-release\res
+com.noteflow.app-sqlite-2.4.0-46 C:\Users\Valuka\.gradle\caches\transforms-4\a2c1f44d85a58bea855e8e881fed3c91\transformed\sqlite-2.4.0\res
+com.noteflow.app-constraintlayout-2.0.1-47 C:\Users\Valuka\.gradle\caches\transforms-4\a5cf3c63d3d21b1fc115573ebc0bc063\transformed\constraintlayout-2.0.1\res
+com.noteflow.app-navigation-runtime-2.7.7-48 C:\Users\Valuka\.gradle\caches\transforms-4\ab1f5857df2cdd9ec92205362f09a229\transformed\navigation-runtime-2.7.7\res
+com.noteflow.app-ui-graphics-release-49 C:\Users\Valuka\.gradle\caches\transforms-4\ac5fe6c2ae98769af38974bea2f77521\transformed\ui-graphics-release\res
+com.noteflow.app-lifecycle-livedata-core-ktx-2.8.4-50 C:\Users\Valuka\.gradle\caches\transforms-4\b539bd468d759140d06f22c90dfbee3e\transformed\lifecycle-livedata-core-ktx-2.8.4\res
+com.noteflow.app-lifecycle-viewmodel-ktx-2.8.4-51 C:\Users\Valuka\.gradle\caches\transforms-4\bc41c6988590d83eb80257f3121f723a\transformed\lifecycle-viewmodel-ktx-2.8.4\res
+com.noteflow.app-ui-util-release-52 C:\Users\Valuka\.gradle\caches\transforms-4\c11c232f28d1ce3243aafc1306eb7083\transformed\ui-util-release\res
+com.noteflow.app-sqlite-framework-2.4.0-53 C:\Users\Valuka\.gradle\caches\transforms-4\cd4a2786e58cc42f09da01120e8ec02c\transformed\sqlite-framework-2.4.0\res
+com.noteflow.app-animation-release-54 C:\Users\Valuka\.gradle\caches\transforms-4\cdc4495f5fadcbc06e80e604a5986116\transformed\animation-release\res
+com.noteflow.app-datastore-1.0.0-55 C:\Users\Valuka\.gradle\caches\transforms-4\cff0e8d5d9f243904f623daf16b3accb\transformed\datastore-1.0.0\res
+com.noteflow.app-core-ktx-1.13.1-56 C:\Users\Valuka\.gradle\caches\transforms-4\d33bee1637304cf060ddfc55a5600f8f\transformed\core-ktx-1.13.1\res
+com.noteflow.app-startup-runtime-1.1.1-57 C:\Users\Valuka\.gradle\caches\transforms-4\d4dd02a3897b1441880b8fdd2da8ae00\transformed\startup-runtime-1.1.1\res
+com.noteflow.app-glance-1.1.0-58 C:\Users\Valuka\.gradle\caches\transforms-4\d5f06c3faaa51f6a170c7d009f81e25b\transformed\glance-1.1.0\res
+com.noteflow.app-ui-geometry-release-59 C:\Users\Valuka\.gradle\caches\transforms-4\d6abce7d29e50cc8636367a9120f8550\transformed\ui-geometry-release\res
+com.noteflow.app-emoji2-views-helper-1.3.0-60 C:\Users\Valuka\.gradle\caches\transforms-4\dbb43fb97c16af1738c69f9585f17725\transformed\emoji2-views-helper-1.3.0\res
+com.noteflow.app-customview-poolingcontainer-1.0.0-61 C:\Users\Valuka\.gradle\caches\transforms-4\dd42e38183cb7d9a90b69ba4cfad41b5\transformed\customview-poolingcontainer-1.0.0\res
+com.noteflow.app-core-1.13.1-62 C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\res
+com.noteflow.app-lifecycle-viewmodel-compose-release-63 C:\Users\Valuka\.gradle\caches\transforms-4\ec19593f04bba33b8d78516c8b16df0d\transformed\lifecycle-viewmodel-compose-release\res
+com.noteflow.app-activity-1.9.1-64 C:\Users\Valuka\.gradle\caches\transforms-4\ecafde4f717211b5393d3a6669bbd635\transformed\activity-1.9.1\res
+com.noteflow.app-annotation-experimental-1.4.0-65 C:\Users\Valuka\.gradle\caches\transforms-4\efdcc402ed8e7fa891c97037c96eceec\transformed\annotation-experimental-1.4.0\res
+com.noteflow.app-savedstate-1.2.1-66 C:\Users\Valuka\.gradle\caches\transforms-4\f0e8eaf470acca0415ef31a789577478\transformed\savedstate-1.2.1\res
+com.noteflow.app-material-ripple-release-67 C:\Users\Valuka\.gradle\caches\transforms-4\f3c3e4c165974ba5c9f6b99779b1bf80\transformed\material-ripple-release\res
+com.noteflow.app-lifecycle-viewmodel-savedstate-2.8.4-68 C:\Users\Valuka\.gradle\caches\transforms-4\fb1a9fec1323591d9ca1b5ae8d522f75\transformed\lifecycle-viewmodel-savedstate-2.8.4\res
+com.noteflow.app-navigation-common-2.7.7-69 C:\Users\Valuka\.gradle\caches\transforms-4\fe0bfa0d5983e4510a88f46c7299367f\transformed\navigation-common-2.7.7\res
+com.noteflow.app-lifecycle-livedata-2.8.4-70 C:\Users\Valuka\.gradle\caches\transforms-4\fefb365811d30cd95537de334af25df0\transformed\lifecycle-livedata-2.8.4\res
+com.noteflow.app-pngs-71 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\build\generated\res\pngs\release
+com.noteflow.app-resValues-72 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\build\generated\res\resValues\release
+com.noteflow.app-packageReleaseResources-73 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.noteflow.app-packageReleaseResources-74 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.noteflow.app-release-75 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.noteflow.app-main-76 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\res
+com.noteflow.app-release-77 C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\release\res

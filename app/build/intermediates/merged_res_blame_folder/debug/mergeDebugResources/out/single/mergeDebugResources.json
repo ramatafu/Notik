@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.noteflow.app-debug-78:/drawable_ic_notification.xml.flat",
+        "source": "com.noteflow.app-main-80:/drawable/ic_notification.xml"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/drawable_ic_launcher_foreground.png.flat",
+        "source": "com.noteflow.app-main-80:/drawable/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/xml_file_paths.xml.flat",
+        "source": "com.noteflow.app-main-80:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/xml_locales_config.xml.flat",
+        "source": "com.noteflow.app-main-80:/xml/locales_config.xml"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/xml_notes_widget_info.xml.flat",
+        "source": "com.noteflow.app-main-80:/xml/notes_widget_info.xml"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.noteflow.app-main-80:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

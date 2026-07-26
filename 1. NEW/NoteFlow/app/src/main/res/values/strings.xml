@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notik</string>
+    <string name="widget_label">Заметки Notik</string>
+    <string name="reminder_channel_name">Напоминания о заметках</string>
+    <string name="untitled_note">Без названия</string>
+    <string name="birthday_channel_name">Напоминания о днях рождения</string>
+
+    <!-- Notes list screen -->
+    <string name="notes_tab_active">Заметки</string>
+    <string name="notes_tab_archived">Архив</string>
+    <string name="notes_tab_trash">Корзина</string>
+    <string name="notes_tab_birthdays">Дни рождения</string>
+    <string name="notes_search_placeholder">Поиск по заметкам…</string>
+    <string name="notes_menu_cd">Меню</string>
+    <string name="fab_new_list">Список</string>
+    <string name="fab_new_note">Заметка</string>
+    <string name="notes_empty">Здесь пока пусто</string>
+    <string name="menu_labels_title">Лейблы</string>
+    <string name="menu_manage_labels">Управление лейблами</string>
+    <string name="menu_settings">Настройки</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_theme">Тема оформления</string>
+    <string name="settings_theme_system">Системная</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_text_color">Цвет текста в заметках</string>
+    <string name="settings_default_bg">Цвет фона заметки по умолчанию</string>
+    <string name="settings_default_bg_hint">Новые заметки будут создаваться с этим фоном — цвет отдельной заметки всё ещё можно поменять в редакторе.</string>
+    <string name="settings_backup_section">Резервное копирование</string>
+    <string name="settings_backup_create">Создать резервную копию</string>
+    <string name="settings_backup_create_sub">Экспорт всех заметок в один .zip-файл</string>
+    <string name="settings_backup_restore">Восстановить из бэкапа</string>
+    <string name="settings_backup_restore_sub">Импорт заметок из .zip-файла</string>
+    <string name="settings_backup_share_title">Сохранить бэкап</string>
+    <string name="settings_language">Язык / Language</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_about_body">Notik — вдохновлено Notally, полностью написано с нуля.</string>
+    <string name="settings_about_dev">Разработчик: ram, совместно с Claude Code (Anthropic).</string>
+    <string name="settings_version">Версия %1$s</string>
+</resources>
