@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 
 data class EditorState(
     val id: Long = 0,
-    val archived: Boolean = false,
     val type: NoteType = NoteType.NOTE,
     val title: String = "",
     val body: String = "",
@@ -63,7 +62,6 @@ class EditorViewModel(
                     images = full.images,
                     labels = full.labels,
                     reminderAt = full.note.reminderAt,
-                    archived = full.note.archived,
                     loaded = true
                 )
             } else {
@@ -104,11 +102,11 @@ class EditorViewModel(
             color = s.color,
             pinned = s.pinned,
             reminderAt = s.reminderAt,
-            modifiedAt = System.currentTimeMillis(),
-            archived = s.archived
+            modifiedAt = System.currentTimeMillis()
         )
         val id = repository.saveNote(note, s.checklist, s.images, s.labels)
         val savedNote = note.copy(id = id)
+        _state.value = _state.value.copy(id = id)
         if (s.reminderAt != null) ReminderScheduler.schedule(appContext, savedNote) else ReminderScheduler.cancel(appContext, id)
         onSaved(id)
     }

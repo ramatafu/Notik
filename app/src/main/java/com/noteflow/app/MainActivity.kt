@@ -7,9 +7,12 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.platform.LocalView
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import com.noteflow.app.data.ThemeMode
 import com.noteflow.app.ui.navigation.NoteFlowNavGraph
 import com.noteflow.app.ui.theme.NoteFlowTheme
@@ -39,6 +42,17 @@ class MainActivity : AppCompatActivity() {
                 ThemeMode.LIGHT -> false
                 ThemeMode.DARK -> true
             }
+
+            // Status bar icons (clock, battery, signal, etc.): black in dark theme,
+            // white in light theme, per explicit request. isAppearanceLightStatusBars
+            // is named from the OS's point of view (true = a light bar background,
+            // so it picks DARK icons for contrast) — hence it's set to darkTheme here.
+            val view = LocalView.current
+            SideEffect {
+                val insetsController = WindowCompat.getInsetsController(window, view)
+                insetsController.isAppearanceLightStatusBars = darkTheme
+            }
+
             NoteFlowTheme(darkTheme = darkTheme) {
                 NoteFlowNavGraph(startNoteId = deepLinkNoteId?.takeIf { it != 0L })
             }

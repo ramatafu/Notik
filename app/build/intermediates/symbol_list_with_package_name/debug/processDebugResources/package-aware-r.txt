@@ -5104,6 +5104,10 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string clear_trash
+string clear_trash_confirm_action
+string clear_trash_confirm_body
+string clear_trash_confirm_title
 string close_drawer
 string close_sheet
 string color_bg_black
@@ -5115,6 +5119,7 @@ string color_red
 string color_white
 string default_error_message
 string default_popup_window_title
+string dialog_cancel
 string dropdown_menu
 string error_a11y_label
 string error_icon_content_description
@@ -5131,6 +5136,7 @@ string icon_content_description
 string in_progress
 string indeterminate
 string item_view_role_description
+string label_books
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -5315,8 +5321,13 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string selected
 string settings_about
-string settings_about_body
-string settings_about_dev
+string settings_about_dev_code
+string settings_about_dev_consult
+string settings_about_dev_header
+string settings_about_dev_idea
+string settings_about_license
+string settings_about_source_label
+string settings_about_tagline
 string settings_backup_create
 string settings_backup_create_sub
 string settings_backup_restore
@@ -5325,6 +5336,8 @@ string settings_backup_section
 string settings_backup_share_title
 string settings_default_bg
 string settings_default_bg_hint
+string settings_experimental_books_sub
+string settings_experimental_header
 string settings_language
 string settings_text_color
 string settings_theme
@@ -5337,6 +5350,7 @@ string side_sheet_behavior
 string status_bar_notification_info_overflow
 string switch_role
 string tab
+string tab_with_count
 string template_percent
 string tooltip_description
 string tooltip_label

@@ -16,9 +16,16 @@
     <string name="fab_new_list">Список</string>
     <string name="fab_new_note">Заметка</string>
     <string name="notes_empty">Здесь пока пусто</string>
-    <string name="menu_labels_title">Лейблы</string>
-    <string name="menu_manage_labels">Управление лейблами</string>
+    <string name="menu_labels_title">Метки</string>
+    <string name="menu_manage_labels">Управление метками</string>
     <string name="menu_settings">Настройки</string>
+    <string name="clear_trash">Очистить корзину</string>
+    <string name="clear_trash_confirm_title">Очистить корзину?</string>
+    <string name="clear_trash_confirm_body">Все заметки в корзине будут удалены навсегда. Это действие нельзя отменить.</string>
+    <string name="clear_trash_confirm_action">Удалить всё</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="label_books">Книги</string>
 
     <!-- Settings screen -->
     <string name="settings_title">Настройки</string>
@@ -35,9 +42,16 @@
     <string name="settings_backup_restore_sub">Импорт заметок из .zip-файла</string>
     <string name="settings_backup_share_title">Сохранить бэкап</string>
     <string name="settings_language">Язык / Language</string>
+    <string name="settings_experimental_header">Экспериментальные функции</string>
+    <string name="settings_experimental_books_sub">Чтение PDF-файлов прямо в приложении, полностью офлайн</string>
     <string name="settings_about">О приложении</string>
-    <string name="settings_about_body">Notik — вдохновлено Notally, полностью написано с нуля.</string>
-    <string name="settings_about_dev">Разработчик: ram, совместно с Claude Code (Anthropic) и DeepSeek.</string>
+    <string name="settings_about_tagline">Notik — минималистичное приложение для заметок с акцентом на приватность.</string>
+    <string name="settings_about_dev_header">Разработка:</string>
+    <string name="settings_about_dev_idea">Идея, дизайн, тестирование: ram</string>
+    <string name="settings_about_dev_code">Генерация кода: Claude Code (Anthropic)</string>
+    <string name="settings_about_dev_consult">Консультации: DeepSeek</string>
+    <string name="settings_about_source_label">Исходный код:</string>
+    <string name="settings_about_license">Лицензия: GPLv3</string>
     <string name="settings_version">Версия %1$s</string>
 
     <!-- Note text colors -->

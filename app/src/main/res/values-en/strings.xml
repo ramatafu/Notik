@@ -19,6 +19,13 @@
     <string name="menu_labels_title">Labels</string>
     <string name="menu_manage_labels">Manage labels</string>
     <string name="menu_settings">Settings</string>
+    <string name="clear_trash">Empty trash</string>
+    <string name="clear_trash_confirm_title">Empty trash?</string>
+    <string name="clear_trash_confirm_body">All notes in trash will be permanently deleted. This cannot be undone.</string>
+    <string name="clear_trash_confirm_action">Delete all</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="label_books">Books</string>
 
     <!-- Settings screen -->
     <string name="settings_title">Settings</string>
@@ -35,9 +42,16 @@
     <string name="settings_backup_restore_sub">Import notes from a .zip file</string>
     <string name="settings_backup_share_title">Save backup</string>
     <string name="settings_language">Язык / Language</string>
+    <string name="settings_experimental_header">Experimental features</string>
+    <string name="settings_experimental_books_sub">Read PDF files right in the app, fully offline</string>
     <string name="settings_about">About</string>
-    <string name="settings_about_body">Notik — inspired by Notally, written from scratch.</string>
-    <string name="settings_about_dev">Developer: ram, together with Claude Code (Anthropic) and DeepSeek.</string>
+    <string name="settings_about_tagline">Notik — a minimalist note-taking app focused on privacy.</string>
+    <string name="settings_about_dev_header">Development:</string>
+    <string name="settings_about_dev_idea">Idea, design, testing: ram</string>
+    <string name="settings_about_dev_code">Code generation: Claude Code (Anthropic)</string>
+    <string name="settings_about_dev_consult">Consulting: DeepSeek</string>
+    <string name="settings_about_source_label">Source code:</string>
+    <string name="settings_about_license">License: GPLv3</string>
     <string name="settings_version">Version %1$s</string>
 
     <!-- Note text colors -->

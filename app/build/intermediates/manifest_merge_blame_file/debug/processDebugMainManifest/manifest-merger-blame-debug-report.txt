@@ -1,187 +1,186 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.noteflow.app"
-4    android:versionCode="8"
-5    android:versionName="0.0.8" >
+4    android:versionCode="9"
+5    android:versionName="0.1.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-11-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:4:5-77
-11-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:4:22-74
+11-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:5:5-77
+11-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:5:22-74
 12    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-12-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:5:5-79
-12-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:5:22-76
+12-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-13-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:6:5-74
-13-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:6:22-71
+13-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:7:5-74
+13-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:7:22-71
 14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:7:5-81
-14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:7:22-78
+14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:5-81
+14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:22-78
 15    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:5-76
-15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:22-73
+15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-76
+15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-73
 16    <uses-permission android:name="android.permission.VIBRATE" />
-16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-66
-16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-63
+16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-66
+16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-63
 17    <uses-permission android:name="android.permission.READ_CONTACTS" />
-17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-72
-17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-69
+17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:5-72
+17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:22-69
 18    <uses-permission android:name="android.permission.WAKE_LOCK" />
 18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:5-68
 18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:22-65
-19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:24:5-79
-19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:24:22-76
-20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-20-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:5-77
-20-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:22-74
-21
-22    <permission
-22-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-23        android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-23-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-24        android:protectionLevel="signature" />
-24-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-25
-26    <uses-permission android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-26-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-26-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-27
-28    <application
-28-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:12:5-75:19
-29        android:name="com.noteflow.app.NoteFlowApp"
-29-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:13:9-36
-30        android:allowBackup="true"
-30-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:14:9-35
-31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-31-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-32        android:debuggable="true"
-33        android:extractNativeLibs="false"
-34        android:icon="@mipmap/ic_launcher"
-34-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:15:9-43
-35        android:label="@string/app_name"
-35-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:16:9-41
-36        android:localeConfig="@xml/locales_config"
-36-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:18:9-51
-37        android:supportsRtl="true"
-37-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:19:9-35
-38        android:testOnly="true"
-39        android:theme="@style/Theme.NoteFlow" >
-39-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:9-46
-40        <activity
-40-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-36:20
-41            android:name="com.noteflow.app.MainActivity"
-41-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:13-41
-42            android:exported="true"
-42-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:13-36
-43            android:launchMode="singleTop"
-43-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:13-43
-44            android:theme="@style/Theme.NoteFlow" >
-44-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:13-50
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:5-77
+19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:22-74
+20
+21    <permission
+21-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+22        android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+26
+27    <application
+27-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:5-84:19
+28        android:name="com.noteflow.app.NoteFlowApp"
+28-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-36
+29        android:allowBackup="true"
+29-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+31        android:debuggable="true"
+32        android:extractNativeLibs="false"
+33        android:icon="@mipmap/ic_launcher"
+33-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:9-43
+34        android:label="@string/app_name"
+34-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:9-41
+35        android:localeConfig="@xml/locales_config"
+35-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:9-51
+36        android:supportsRtl="true"
+36-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:9-35
+37        android:testOnly="true"
+38        android:theme="@style/Theme.NoteFlow" >
+38-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:9-46
+39        <activity
+39-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:29:9-45:20
+40            android:name="com.noteflow.app.MainActivity"
+40-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:30:13-41
+41            android:exported="true"
+41-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-36
+42            android:launchMode="singleTop"
+42-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:13-43
+43            android:theme="@style/Theme.NoteFlow"
+43-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:13-50
+44            android:windowSoftInputMode="adjustResize" >
+44-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:13-55
 45            <intent-filter>
-45-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:13-29:29
+45-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:35:13-38:29
 46                <action android:name="android.intent.action.MAIN" />
-46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:17-69
-46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:25-66
+46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:17-69
+46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:25-66
 47
 48                <category android:name="android.intent.category.LAUNCHER" />
-48-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:28:17-77
-48-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:28:27-74
+48-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:17-77
+48-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:27-74
 49            </intent-filter>
 50            <!-- Deep link used by the widget to open a specific note -->
 51            <intent-filter>
-51-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-35:29
+51-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:40:13-44:29
 52                <action android:name="android.intent.action.VIEW" />
-52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:17-69
-52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:25-66
+52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:17-69
+52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:25-66
 53
 54                <category android:name="android.intent.category.DEFAULT" />
-54-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:17-76
-54-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:27-73
+54-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:17-76
+54-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:27-73
 55
 56                <data
-56-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:17-71
+56-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:17-71
 57                    android:host="note"
-57-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:49-68
+57-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:49-68
 58                    android:scheme="noteflow" />
-58-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:23-48
+58-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:23-48
 59            </intent-filter>
 60        </activity>
 61
 62        <!-- Reminder notification receiver -->
 63        <receiver
-63-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:39:9-88
+63-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:9-88
 64            android:name="com.noteflow.app.reminder.ReminderReceiver"
-64-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:39:19-60
+64-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:19-60
 65            android:exported="false" />
-65-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:39:61-85
+65-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:61-85
 66
 67        <!-- Birthday reminder notification receiver -->
 68        <receiver
-68-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:9-96
+68-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:9-96
 69            android:name="com.noteflow.app.reminder.BirthdayReminderReceiver"
-69-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:19-68
+69-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:19-68
 70            android:exported="false" />
-70-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:69-93
+70-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:69-93
 71
 72        <!-- Reschedule reminders after a reboot -->
 73        <receiver
-73-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:45:9-49:20
+73-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:9-58:20
 74            android:name="com.noteflow.app.reminder.BootReceiver"
-74-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:45:19-56
+74-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:19-56
 75            android:exported="true" >
-75-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:45:57-80
+75-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:57-80
 76            <intent-filter>
-76-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:46:13-48:29
+76-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:13-57:29
 77                <action android:name="android.intent.action.BOOT_COMPLETED" />
-77-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:47:17-79
-77-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:47:25-76
+77-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:17-79
+77-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:25-76
 78            </intent-filter>
 79        </receiver>
 80
 81        <!-- Home-screen widget -->
 82        <receiver
-82-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:9-62:20
+82-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:61:9-71:20
 83            android:name="com.noteflow.app.widget.NotesWidgetReceiver"
-83-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:53:13-55
+83-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:62:13-55
 84            android:exported="false"
-84-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:13-37
+84-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:63:13-37
 85            android:label="@string/widget_label" >
-85-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:13-49
+85-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:64:13-49
 86            <intent-filter>
-86-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:13-58:29
+86-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:65:13-67:29
 87                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-87-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:17-84
-87-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:25-81
+87-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:17-84
+87-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:25-81
 88            </intent-filter>
 89
 90            <meta-data
-90-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:59:13-61:61
+90-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:68:13-70:61
 91                android:name="android.appwidget.provider"
-91-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:60:17-58
+91-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:17-58
 92                android:resource="@xml/notes_widget_info" />
-92-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:61:17-58
+92-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:70:17-58
 93        </receiver>
 94
 95        <!-- FileProvider for sharing exported files (PDF/HTML/TXT/JSON, images) -->
 96        <provider
 97            android:name="androidx.core.content.FileProvider"
-97-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:13-62
+97-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:75:13-62
 98            android:authorities="com.noteflow.app.fileprovider"
-98-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:67:13-64
+98-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:76:13-64
 99            android:exported="false"
-99-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:68:13-37
+99-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:77:13-37
 100            android:grantUriPermissions="true" >
-100-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:13-47
+100-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:78:13-47
 101            <meta-data
-101-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:70:13-72:54
+101-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:79:13-81:54
 102                android:name="android.support.FILE_PROVIDER_PATHS"
-102-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:71:17-67
+102-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:80:17-67
 103                android:resource="@xml/file_paths" />
-103-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:72:17-51
+103-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:81:17-51
 104        </provider>
 105
 106        <activity
@@ -428,8 +427,8 @@
 231            <intent-filter>
 231-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:116:13-120:29
 232                <action android:name="android.intent.action.BOOT_COMPLETED" />
-232-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:47:17-79
-232-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:47:25-76
+232-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:17-79
+232-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:25-76
 233                <action android:name="android.intent.action.TIME_SET" />
 233-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:17-73
 233-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:25-70

@@ -9,6 +9,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -86,7 +87,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                         }
                     }
                     IconButton(onClick = { showLabelEditor = true }) {
-                        Icon(Icons.Default.Label, contentDescription = "Лейблы")
+                        Icon(Icons.Default.Label, contentDescription = "Метки")
                     }
                     IconButton(onClick = { showReminderPicker(context) { millis -> viewModel.updateReminder(millis) } }) {
                         Icon(Icons.Default.Alarm, contentDescription = "Напоминание", tint = if (state.reminderAt != null) MaterialTheme.colorScheme.primary else LocalContentColor.current)
@@ -103,6 +104,8 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                 .padding(padding)
                 .background(if (isDark) MaterialTheme.colorScheme.background else colorForKey(state.color))
                 .fillMaxSize()
+                .imePadding()
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
             OutlinedTextField(
@@ -111,7 +114,12 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                 placeholder = { Text("Заголовок") },
                 textStyle = MaterialTheme.typography.titleLarge.copy(color = textColorOption.color),
                 modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color.Transparent, focusedBorderColor = Color.Transparent)
+                colors = OutlinedTextFieldDefaults.colors(
+                    unfocusedBorderColor = Color.Transparent,
+                    focusedBorderColor = Color.Transparent,
+                    focusedTextColor = textColorOption.color,
+                    unfocusedTextColor = textColorOption.color
+                )
             )
 
             FormattingToolbar(
@@ -155,8 +163,15 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                     onValueChange = viewModel::updateBody,
                     placeholder = { Text("Заметка…") },
                     textStyle = LocalTextStyle.current.copy(color = textColorOption.color),
-                    modifier = Modifier.fillMaxSize(),
-                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color.Transparent, focusedBorderColor = Color.Transparent)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 240.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedBorderColor = Color.Transparent,
+                        focusedBorderColor = Color.Transparent,
+                        focusedTextColor = textColorOption.color,
+                        unfocusedTextColor = textColorOption.color
+                    )
                 )
             }
         }
@@ -269,7 +284,12 @@ private fun ChecklistEditor(items: List<ChecklistItem>, onChange: (List<Checklis
                         textDecoration = if (item.checked) TextDecoration.LineThrough else TextDecoration.None
                     ),
                     modifier = Modifier.weight(1f),
-                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color.Transparent, focusedBorderColor = Color.Transparent)
+                    colors = OutlinedTextFieldDefaults.colors(
+                        unfocusedBorderColor = Color.Transparent,
+                        focusedBorderColor = Color.Transparent,
+                        focusedTextColor = textColor,
+                        unfocusedTextColor = textColor
+                    )
                 )
                 IconButton(onClick = { onChange(items.toMutableList().also { it.removeAt(index) }) }) {
                     Icon(Icons.Default.Close, contentDescription = "Удалить строку")
@@ -307,7 +327,7 @@ private fun LabelPickerSheet(selected: List<String>, onChange: (List<String>) ->
     var newLabel by remember { mutableStateOf("") }
     ModalBottomSheet(onDismissRequest = onDismiss) {
         Column(Modifier.padding(16.dp)) {
-            Text("Лейблы этой заметки", style = MaterialTheme.typography.titleMedium)
+            Text("Метки этой заметки", style = MaterialTheme.typography.titleMedium)
             selected.forEach { label ->
                 Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
                     Text(label, modifier = Modifier.weight(1f).padding(vertical = 8.dp))
@@ -315,7 +335,7 @@ private fun LabelPickerSheet(selected: List<String>, onChange: (List<String>) ->
                 }
             }
             Row {
-                OutlinedTextField(value = newLabel, onValueChange = { newLabel = it }, placeholder = { Text("Новый лейбл") }, modifier = Modifier.weight(1f))
+                OutlinedTextField(value = newLabel, onValueChange = { newLabel = it }, placeholder = { Text("Новая метка") }, modifier = Modifier.weight(1f))
                 IconButton(onClick = { if (newLabel.isNotBlank()) { onChange(selected + newLabel); newLabel = "" } }) {
                     Icon(Icons.Default.Add, contentDescription = null)
                 }

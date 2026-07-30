@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.noteflow.app.ui.books.BooksScreen
 import com.noteflow.app.ui.editor.NoteEditorScreen
 import com.noteflow.app.ui.labels.LabelsScreen
 import com.noteflow.app.ui.notes.NotesListScreen
@@ -17,6 +18,7 @@ object Routes {
     const val EDITOR = "editor/{noteId}/{isList}"
     const val LABELS = "labels"
     const val SETTINGS = "settings"
+    const val BOOKS = "books"
     fun editor(noteId: Long, isList: Boolean = false) = "editor/$noteId/$isList"
 }
 
@@ -29,7 +31,8 @@ fun NoteFlowNavGraph(startNoteId: Long? = null) {
             NotesListScreen(
                 onOpenNote = { id, isList -> navController.navigate(Routes.editor(id, isList)) },
                 onOpenLabels = { navController.navigate(Routes.LABELS) },
-                onOpenSettings = { navController.navigate(Routes.SETTINGS) }
+                onOpenSettings = { navController.navigate(Routes.SETTINGS) },
+                onOpenBooks = { navController.navigate(Routes.BOOKS) }
             )
         }
         composable(
@@ -48,6 +51,9 @@ fun NoteFlowNavGraph(startNoteId: Long? = null) {
         }
         composable(Routes.SETTINGS) {
             SettingsScreen(onBack = { navController.popBackStack() })
+        }
+        composable(Routes.BOOKS) {
+            BooksScreen(onBack = { navController.popBackStack() })
         }
     }
 

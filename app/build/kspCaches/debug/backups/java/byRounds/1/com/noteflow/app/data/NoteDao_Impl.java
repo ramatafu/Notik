@@ -16,6 +16,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.IllegalArgumentException;
+import java.lang.Integer;
 import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
@@ -46,6 +47,8 @@ public final class NoteDao_Impl implements NoteDao {
   private final EntityDeletionOrUpdateAdapter<Note> __updateAdapterOfNote;
 
   private final SharedSQLiteStatement __preparedStmtOfHardDeleteNote;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAllTrashed;
 
   private final SharedSQLiteStatement __preparedStmtOfClearChecklist;
 
@@ -177,6 +180,14 @@ public final class NoteDao_Impl implements NoteDao {
       @NonNull
       public String createQuery() {
         final String _query = "DELETE FROM notes WHERE id = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfDeleteAllTrashed = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM notes WHERE inTrash = 1";
         return _query;
       }
     };
@@ -319,6 +330,29 @@ public final class NoteDao_Impl implements NoteDao {
           }
         } finally {
           __preparedStmtOfHardDeleteNote.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteAllTrashed(final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAllTrashed.acquire();
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteAllTrashed.release(_stmt);
         }
       }
     }, $completion);
@@ -622,6 +656,99 @@ public final class NoteDao_Impl implements NoteDao {
             }
             _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
             _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Flow<Integer> observeActiveCount() {
+    final String _sql = "SELECT COUNT(*) FROM notes WHERE inTrash = 0 AND archived = 0";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<Integer>() {
+      @Override
+      @NonNull
+      public Integer call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Integer _result;
+          if (_cursor.moveToFirst()) {
+            final int _tmp;
+            _tmp = _cursor.getInt(0);
+            _result = _tmp;
+          } else {
+            _result = 0;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Flow<Integer> observeArchivedCount() {
+    final String _sql = "SELECT COUNT(*) FROM notes WHERE archived = 1 AND inTrash = 0";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<Integer>() {
+      @Override
+      @NonNull
+      public Integer call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Integer _result;
+          if (_cursor.moveToFirst()) {
+            final int _tmp;
+            _tmp = _cursor.getInt(0);
+            _result = _tmp;
+          } else {
+            _result = 0;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Flow<Integer> observeTrashedCount() {
+    final String _sql = "SELECT COUNT(*) FROM notes WHERE inTrash = 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<Integer>() {
+      @Override
+      @NonNull
+      public Integer call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Integer _result;
+          if (_cursor.moveToFirst()) {
+            final int _tmp;
+            _tmp = _cursor.getInt(0);
+            _result = _tmp;
+          } else {
+            _result = 0;
           }
           return _result;
         } finally {

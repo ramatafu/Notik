@@ -16,11 +16,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.noteflow.app.NoteFlowApp
 import com.noteflow.app.R
 import com.noteflow.app.data.Note
 import com.noteflow.app.ui.ViewModelFactory
@@ -33,7 +37,8 @@ import com.noteflow.app.ui.theme.colorForKey
 fun NotesListScreen(
     onOpenNote: (Long, Boolean) -> Unit,
     onOpenLabels: () -> Unit,
-    onOpenSettings: () -> Unit
+    onOpenSettings: () -> Unit,
+    onOpenBooks: () -> Unit
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
     val viewModel: NotesViewModel = viewModel(factory = ViewModelFactory(context))
@@ -42,7 +47,27 @@ fun NotesListScreen(
     val query by viewModel.query.collectAsState()
     val labels by viewModel.labels.collectAsState()
     val labelFilter by viewModel.labelFilter.collectAsState()
+    val activeCount by viewModel.activeCount.collectAsState()
+    val archivedCount by viewModel.archivedCount.collectAsState()
+    val trashedCount by viewModel.trashedCount.collectAsState()
+    val settingsRepository = remember { (context.applicationContext as NoteFlowApp).settingsRepository }
+    val booksEnabled by settingsRepository.booksEnabled.collectAsState()
     var drawerOpen by remember { mutableStateOf(false) }
+    var showClearTrashDialog by remember { mutableStateOf(false) }
+
+    // This route's own Lifecycle goes through ON_RESUME every time it becomes the
+    // active destination again (e.g. popping back from the editor) — even though the
+    // NotesViewModel instance itself survives the whole time. Forcing a refresh here
+    // guarantees the grid always reflects the latest saved note, closing any possible
+    // window where a just-edited note could still show stale content.
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) viewModel.refresh()
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
 
     val activeLabel = stringResource(R.string.notes_tab_active)
     val archivedLabel = stringResource(R.string.notes_tab_archived)
@@ -50,9 +75,9 @@ fun NotesListScreen(
     val birthdaysLabel = stringResource(R.string.notes_tab_birthdays)
 
     val currentSectionTitle = when (tab) {
-        NotesTab.ACTIVE -> activeLabel
-        NotesTab.ARCHIVED -> archivedLabel
-        NotesTab.TRASH -> trashLabel
+        NotesTab.ACTIVE -> stringResource(R.string.tab_with_count, activeLabel, activeCount)
+        NotesTab.ARCHIVED -> stringResource(R.string.tab_with_count, archivedLabel, archivedCount)
+        NotesTab.TRASH -> stringResource(R.string.tab_with_count, trashLabel, trashedCount)
         NotesTab.BIRTHDAYS -> birthdaysLabel
     }
 
@@ -77,7 +102,8 @@ fun NotesListScreen(
     ) { padding ->
         Column(Modifier.padding(padding)) {
 
-            // Top row: hamburger menu (now also holds the section switcher) + current section name.
+            // Top row: hamburger menu (now also holds the section switcher) + current
+            // section name on the left, app name on the right.
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                 IconButton(onClick = { drawerOpen = true }) {
                     Icon(Icons.Default.Menu, contentDescription = stringResource(R.string.notes_menu_cd))
@@ -87,18 +113,32 @@ fun NotesListScreen(
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier.padding(start = 4.dp)
                 )
+                Spacer(Modifier.weight(1f))
+                Text(
+                    stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(end = 16.dp)
+                )
             }
 
             if (tab != NotesTab.BIRTHDAYS) {
-                OutlinedTextField(
-                    value = query,
-                    onValueChange = viewModel::setQuery,
-                    placeholder = { Text(stringResource(R.string.notes_search_placeholder)) },
-                    singleLine = true,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp)
-                )
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                    OutlinedTextField(
+                        value = query,
+                        onValueChange = viewModel::setQuery,
+                        placeholder = { Text(stringResource(R.string.notes_search_placeholder)) },
+                        singleLine = true,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 16.dp, top = 8.dp, bottom = 8.dp, end = if (tab == NotesTab.TRASH) 8.dp else 16.dp)
+                    )
+                    if (tab == NotesTab.TRASH && notes.isNotEmpty()) {
+                        TextButton(onClick = { showClearTrashDialog = true }, modifier = Modifier.padding(end = 8.dp)) {
+                            Text(stringResource(R.string.clear_trash))
+                        }
+                    }
+                }
             }
 
             if (tab == NotesTab.BIRTHDAYS) {
@@ -147,31 +187,32 @@ fun NotesListScreen(
         ModalBottomSheet(onDismissRequest = { drawerOpen = false }) {
             Column(Modifier.padding(16.dp).padding(bottom = 64.dp)) {
 
-                // Section switcher — used to be tabs on the main screen, now lives in this menu.
+                // Group 1: section switcher — used to be tabs on the main screen, now lives here.
                 listOf(
-                    NotesTab.ACTIVE to activeLabel,
-                    NotesTab.ARCHIVED to archivedLabel,
-                    NotesTab.TRASH to trashLabel,
-                    NotesTab.BIRTHDAYS to birthdaysLabel
-                ).forEach { (sectionTab, label) ->
-                    val isSelected = tab == sectionTab
-                    Text(
-                        label,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                        color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable {
-                                viewModel.selectTab(sectionTab)
-                                drawerOpen = false
-                            }
-                            .padding(vertical = 12.dp)
-                    )
+                    Triple(NotesTab.ACTIVE, activeLabel, activeCount),
+                    Triple(NotesTab.ARCHIVED, archivedLabel, archivedCount),
+                    Triple(NotesTab.TRASH, trashLabel, trashedCount)
+                ).forEach { (sectionTab, label, count) ->
+                    MenuTabRow(
+                        label = stringResource(R.string.tab_with_count, label, count),
+                        selected = tab == sectionTab
+                    ) {
+                        viewModel.selectTab(sectionTab)
+                        drawerOpen = false
+                    }
                 }
 
                 Divider(Modifier.padding(vertical = 8.dp))
 
+                // Group 2: birthdays, on its own.
+                MenuTabRow(label = birthdaysLabel, selected = tab == NotesTab.BIRTHDAYS) {
+                    viewModel.selectTab(NotesTab.BIRTHDAYS)
+                    drawerOpen = false
+                }
+
+                Divider(Modifier.padding(vertical = 8.dp))
+
+                // Group 3: labels.
                 Text(stringResource(R.string.menu_labels_title), style = MaterialTheme.typography.titleMedium)
                 labels.forEach { label ->
                     Text(
@@ -186,11 +227,24 @@ fun NotesListScreen(
                             .padding(vertical = 12.dp)
                     )
                 }
-                Divider(Modifier.padding(vertical = 8.dp))
                 Text(
                     stringResource(R.string.menu_manage_labels),
                     modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenLabels() }.padding(vertical = 12.dp)
                 )
+
+                if (booksEnabled) {
+                    Divider(Modifier.padding(vertical = 8.dp))
+
+                    // Group 3b: experimental "Books" feature, only shown when enabled in Settings.
+                    Text(
+                        stringResource(R.string.label_books),
+                        modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenBooks() }.padding(vertical = 12.dp)
+                    )
+                }
+
+                Divider(Modifier.padding(vertical = 8.dp))
+
+                // Group 4: settings.
                 Text(
                     stringResource(R.string.menu_settings),
                     modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenSettings() }.padding(vertical = 12.dp)
@@ -198,6 +252,37 @@ fun NotesListScreen(
             }
         }
     }
+
+    if (showClearTrashDialog) {
+        AlertDialog(
+            onDismissRequest = { showClearTrashDialog = false },
+            title = { Text(stringResource(R.string.clear_trash_confirm_title)) },
+            text = { Text(stringResource(R.string.clear_trash_confirm_body)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    viewModel.emptyTrash()
+                    showClearTrashDialog = false
+                }) { Text(stringResource(R.string.clear_trash_confirm_action)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showClearTrashDialog = false }) { Text(stringResource(R.string.dialog_cancel)) }
+            }
+        )
+    }
+}
+
+@Composable
+private fun MenuTabRow(label: String, selected: Boolean, onClick: () -> Unit) {
+    Text(
+        label,
+        style = MaterialTheme.typography.titleMedium,
+        fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal,
+        color = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(vertical = 12.dp)
+    )
 }
 
 @Composable
@@ -215,9 +300,10 @@ private fun NoteCard(
     val cardModifier = Modifier
         .clip(RoundedCornerShape(16.dp))
         .background(cardBackground)
-        .then(
-            if (isDark) Modifier.border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.5f), RoundedCornerShape(16.dp))
-            else Modifier
+        .border(
+            1.dp,
+            if (isDark) MaterialTheme.colorScheme.outline.copy(alpha = 0.5f) else Color.Black,
+            RoundedCornerShape(16.dp)
         )
         .clickable(onClick = onClick)
         .padding(12.dp)
@@ -252,11 +338,19 @@ private fun NoteCard(
                 IconButton(onClick = onTogglePin, modifier = Modifier.size(40.dp)) {
                     Icon(Icons.Default.PushPin, contentDescription = null, tint = if (note.pinned) MaterialTheme.colorScheme.primary else Color.Gray)
                 }
-                IconButton(onClick = onArchive, modifier = Modifier.size(40.dp)) {
-                    Icon(Icons.Default.Archive, contentDescription = "Архивировать")
+                IconButton(onClick = onArchive, enabled = !note.pinned, modifier = Modifier.size(40.dp)) {
+                    Icon(
+                        Icons.Default.Archive,
+                        contentDescription = "Архивировать",
+                        tint = if (note.pinned) MaterialTheme.colorScheme.outline.copy(alpha = 0.4f) else LocalContentColor.current
+                    )
                 }
-                IconButton(onClick = onTrash, modifier = Modifier.size(40.dp)) {
-                    Icon(Icons.Default.Delete, contentDescription = "Удалить")
+                IconButton(onClick = onTrash, enabled = !note.pinned, modifier = Modifier.size(40.dp)) {
+                    Icon(
+                        Icons.Default.Delete,
+                        contentDescription = "Удалить",
+                        tint = if (note.pinned) MaterialTheme.colorScheme.outline.copy(alpha = 0.4f) else LocalContentColor.current
+                    )
                 }
             } else {
                 IconButton(onClick = onTrash, modifier = Modifier.size(40.dp)) {

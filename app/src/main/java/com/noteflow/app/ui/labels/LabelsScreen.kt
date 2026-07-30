@@ -10,8 +10,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.noteflow.app.R
 import com.noteflow.app.ui.ViewModelFactory
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,8 +27,8 @@ fun LabelsScreen(onBack: () -> Unit) {
 
     Scaffold(topBar = {
         TopAppBar(
-            title = { Text("Лейблы") },
-            navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Default.ArrowBack, contentDescription = "Назад") } }
+            title = { Text(stringResource(R.string.menu_labels_title)) },
+            navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Default.ArrowBack, contentDescription = null) } }
         )
     }) { padding ->
         LazyColumnLabels(padding) {
@@ -50,7 +52,7 @@ fun LabelsScreen(onBack: () -> Unit) {
     editing?.let { oldName ->
         AlertDialog(
             onDismissRequest = { editing = null },
-            title = { Text("Переименовать лейбл") },
+            title = { Text("Переименовать метку") },
             text = { OutlinedTextField(value = editValue, onValueChange = { editValue = it }) },
             confirmButton = {
                 TextButton(onClick = { viewModel.rename(oldName, editValue); editing = null }) { Text("Сохранить") }

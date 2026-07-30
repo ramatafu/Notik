@@ -7,6 +7,10 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string birthday_channel_name
+string clear_trash
+string clear_trash_confirm_action
+string clear_trash_confirm_body
+string clear_trash_confirm_title
 string color_bg_black
 string color_bg_white
 string color_black
@@ -14,8 +18,10 @@ string color_blue
 string color_green
 string color_red
 string color_white
+string dialog_cancel
 string fab_new_list
 string fab_new_note
+string label_books
 string menu_labels_title
 string menu_manage_labels
 string menu_settings
@@ -28,8 +34,13 @@ string notes_tab_birthdays
 string notes_tab_trash
 string reminder_channel_name
 string settings_about
-string settings_about_body
-string settings_about_dev
+string settings_about_dev_code
+string settings_about_dev_consult
+string settings_about_dev_header
+string settings_about_dev_idea
+string settings_about_license
+string settings_about_source_label
+string settings_about_tagline
 string settings_backup_create
 string settings_backup_create_sub
 string settings_backup_restore
@@ -38,6 +49,8 @@ string settings_backup_section
 string settings_backup_share_title
 string settings_default_bg
 string settings_default_bg_hint
+string settings_experimental_books_sub
+string settings_experimental_header
 string settings_language
 string settings_text_color
 string settings_theme
@@ -45,6 +58,7 @@ string settings_theme_dark
 string settings_theme_light
 string settings_title
 string settings_version
+string tab_with_count
 string untitled_note
 string widget_label
 style Theme.NoteFlow

@@ -57,6 +57,15 @@ class SettingsRepository private constructor(context: Context) {
     )
     val language: StateFlow<AppLanguage> = _language
 
+    /** Experimental feature toggle: PDF reader ("Книги" / "Books"), off by default. */
+    private val _booksEnabled = MutableStateFlow(prefs.getBoolean(KEY_BOOKS_ENABLED, false))
+    val booksEnabled: StateFlow<Boolean> = _booksEnabled
+
+    fun setBooksEnabled(enabled: Boolean) {
+        prefs.edit().putBoolean(KEY_BOOKS_ENABLED, enabled).apply()
+        _booksEnabled.value = enabled
+    }
+
     fun setThemeMode(mode: ThemeMode) {
         prefs.edit().putString(KEY_THEME, mode.name).apply()
         _themeMode.value = mode
@@ -84,6 +93,7 @@ class SettingsRepository private constructor(context: Context) {
         private const val KEY_TEXT_COLOR = "text_color"
         private const val KEY_DEFAULT_NOTE_COLOR = "default_note_color"
         private const val KEY_LANGUAGE = "language"
+        private const val KEY_BOOKS_ENABLED = "books_enabled"
 
         @Volatile private var INSTANCE: SettingsRepository? = null
 

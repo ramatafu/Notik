@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -19,7 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.noteflow.app.BuildConfig
 import com.noteflow.app.NoteFlowApp
@@ -44,6 +51,7 @@ fun SettingsScreen(onBack: () -> Unit) {
     val textColor by settingsRepository.textColor.collectAsState()
     val defaultNoteColor by settingsRepository.defaultNoteColor.collectAsState()
     val language by settingsRepository.language.collectAsState()
+    val booksEnabled by settingsRepository.booksEnabled.collectAsState()
 
     val restoreLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let { scope.launch { backupManager.restoreBackup(it) } }
@@ -165,25 +173,74 @@ fun SettingsScreen(onBack: () -> Unit) {
 
             Spacer(Modifier.height(24.dp))
 
+            SectionTitle(stringResource(R.string.settings_experimental_header))
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(R.string.label_books), style = MaterialTheme.typography.bodyLarge)
+                    Text(
+                        stringResource(R.string.settings_experimental_books_sub),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.outline
+                    )
+                }
+                Switch(checked = booksEnabled, onCheckedChange = { settingsRepository.setBooksEnabled(it) })
+            }
+
+            Spacer(Modifier.height(24.dp))
+
             SectionTitle(stringResource(R.string.settings_about))
-            Text(
-                stringResource(R.string.settings_about_body),
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
-            Spacer(Modifier.height(4.dp))
-            Text(
-                stringResource(R.string.settings_about_dev),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.outline,
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
-            )
-            Text(
-                stringResource(R.string.settings_version, BuildConfig.VERSION_NAME),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.outline,
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
-            )
+            Column(Modifier.padding(horizontal = 16.dp)) {
+                Text(stringResource(R.string.settings_about_tagline), style = MaterialTheme.typography.bodyMedium)
+
+                Spacer(Modifier.height(12.dp))
+                Text(
+                    stringResource(R.string.settings_about_dev_header),
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text("• " + stringResource(R.string.settings_about_dev_idea), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.outline)
+                Text("• " + stringResource(R.string.settings_about_dev_code), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.outline)
+                Text("• " + stringResource(R.string.settings_about_dev_consult), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.outline)
+
+                Spacer(Modifier.height(12.dp))
+                val sourceLabel = stringResource(R.string.settings_about_source_label)
+                val linkUrl = "https://github.com/ramatafu/Notik"
+                val linkText = "github.com/ramatafu/Notik"
+                val uriHandler = LocalUriHandler.current
+                val primaryColor = MaterialTheme.colorScheme.primary
+                val annotatedSource = remember(sourceLabel, primaryColor) {
+                    buildAnnotatedString {
+                        append("$sourceLabel ")
+                        pushStringAnnotation(tag = "URL", annotation = linkUrl)
+                        withStyle(SpanStyle(color = primaryColor, textDecoration = TextDecoration.Underline)) {
+                            append(linkText)
+                        }
+                        pop()
+                    }
+                }
+                ClickableText(
+                    text = annotatedSource,
+                    style = MaterialTheme.typography.bodyMedium.copy(color = LocalContentColor.current)
+                ) { offset ->
+                    annotatedSource.getStringAnnotations("URL", offset, offset).firstOrNull()?.let {
+                        uriHandler.openUri(it.item)
+                    }
+                }
+
+                Spacer(Modifier.height(4.dp))
+                Text(stringResource(R.string.settings_about_license), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.outline)
+                Text(
+                    stringResource(R.string.settings_version, BuildConfig.VERSION_NAME),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.outline,
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
             Spacer(Modifier.height(16.dp))
         }
     }

@@ -16,6 +16,9 @@ class NotesRepository(context: Context) {
     fun activeNotes(): Flow<List<Note>> = noteDao.observeActiveNotes()
     fun archivedNotes(): Flow<List<Note>> = noteDao.observeArchivedNotes()
     fun trashedNotes(): Flow<List<Note>> = noteDao.observeTrashedNotes()
+    fun activeCount(): Flow<Int> = noteDao.observeActiveCount()
+    fun archivedCount(): Flow<Int> = noteDao.observeArchivedCount()
+    fun trashedCount(): Flow<Int> = noteDao.observeTrashedCount()
     fun labels(): Flow<List<Label>> = labelDao.observeLabels()
     fun notesByLabel(label: String): Flow<List<Note>> = noteDao.observeNotesByLabel(label)
     fun search(query: String): Flow<List<Note>> = noteDao.searchNotes(query)
@@ -63,6 +66,8 @@ class NotesRepository(context: Context) {
         noteDao.updateNote(note.copy(inTrash = false, deletedAt = null))
 
     suspend fun deleteForever(note: Note) = noteDao.hardDeleteNote(note.id)
+
+    suspend fun emptyTrash() = noteDao.deleteAllTrashed()
 
     /** Call periodically (e.g. on app start) to purge notes older than the retention window. */
     suspend fun purgeExpiredTrash() {

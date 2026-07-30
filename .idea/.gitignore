@@ -1,3 +1,26 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# Gradle files
+.gradle/
+build/
+gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio files
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+captures/
+.DS_Store
+
+# Build files
+app/build/
+app/release/
+app/debug/
+
+# Keystore files (если есть)
+*.jks
+*.keystore
+
+# Other
+*.log
+*.lock

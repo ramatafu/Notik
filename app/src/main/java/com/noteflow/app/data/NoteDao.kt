@@ -23,6 +23,9 @@ interface NoteDao {
     @Query("DELETE FROM notes WHERE id = :noteId")
     suspend fun hardDeleteNote(noteId: Long)
 
+    @Query("DELETE FROM notes WHERE inTrash = 1")
+    suspend fun deleteAllTrashed()
+
     @Query("SELECT * FROM notes WHERE inTrash = 0 AND archived = 0 ORDER BY pinned DESC, modifiedAt DESC")
     fun observeActiveNotes(): Flow<List<Note>>
 
@@ -31,6 +34,15 @@ interface NoteDao {
 
     @Query("SELECT * FROM notes WHERE inTrash = 1 ORDER BY deletedAt DESC")
     fun observeTrashedNotes(): Flow<List<Note>>
+
+    @Query("SELECT COUNT(*) FROM notes WHERE inTrash = 0 AND archived = 0")
+    fun observeActiveCount(): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM notes WHERE archived = 1 AND inTrash = 0")
+    fun observeArchivedCount(): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM notes WHERE inTrash = 1")
+    fun observeTrashedCount(): Flow<Int>
 
     @Query(
         """SELECT * FROM notes WHERE inTrash = 0 AND

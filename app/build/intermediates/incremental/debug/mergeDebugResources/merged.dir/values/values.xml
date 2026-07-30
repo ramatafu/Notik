@@ -2470,6 +2470,10 @@
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="clear_trash">Очистить корзину</string>
+    <string name="clear_trash_confirm_action">Удалить всё</string>
+    <string name="clear_trash_confirm_body">Все заметки в корзине будут удалены навсегда. Это действие нельзя отменить.</string>
+    <string name="clear_trash_confirm_title">Очистить корзину?</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
     <string name="color_bg_black">Чёрный</string>
@@ -2481,6 +2485,7 @@
     <string name="color_white">Белый</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns1:ignore="ExtraTranslation">"Pop-Up Window"</string>
+    <string name="dialog_cancel">Отмена</string>
     <string name="dropdown_menu">"Dropdown menu"</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
@@ -2499,6 +2504,7 @@
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="label_books">Книги</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
     <string name="m3_ref_typeface_brand_regular" translatable="false">sans-serif</string>
@@ -2597,8 +2603,8 @@
     <string description="Suffix for time in 12-hour standard, after noon. [CHAR_LIMIT=2]" name="material_timepicker_pm">PM</string>
     <string description="Title for the dialog with a time picker. [CHAR_LIMIT=32]" name="material_timepicker_select_time">Select time</string>
     <string name="material_timepicker_text_input_mode_description">Switch to text input mode for the time input.</string>
-    <string name="menu_labels_title">Лейблы</string>
-    <string name="menu_manage_labels">Управление лейблами</string>
+    <string name="menu_labels_title">Метки</string>
+    <string name="menu_manage_labels">Управление метками</string>
     <string name="menu_settings">Настройки</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string name="mtrl_checkbox_button_icon_path_checked" translatable="false">M14,18.2 11.4,15.6 10,17 14,21 22,13 20.6,11.6z</string>
@@ -2695,8 +2701,13 @@
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
     <string name="selected">Selected</string>
     <string name="settings_about">О приложении</string>
-    <string name="settings_about_body">Notik — вдохновлено Notally, полностью написано с нуля.</string>
-    <string name="settings_about_dev">Разработчик: ram, совместно с Claude Code (Anthropic) и DeepSeek.</string>
+    <string name="settings_about_dev_code">Генерация кода: Claude Code (Anthropic)</string>
+    <string name="settings_about_dev_consult">Консультации: DeepSeek</string>
+    <string name="settings_about_dev_header">Разработка:</string>
+    <string name="settings_about_dev_idea">Идея, дизайн, тестирование: ram</string>
+    <string name="settings_about_license">Лицензия: GPLv3</string>
+    <string name="settings_about_source_label">Исходный код:</string>
+    <string name="settings_about_tagline">Notik — минималистичное приложение для заметок с акцентом на приватность.</string>
     <string name="settings_backup_create">Создать резервную копию</string>
     <string name="settings_backup_create_sub">Экспорт всех заметок в один .zip-файл</string>
     <string name="settings_backup_restore">Восстановить из бэкапа</string>
@@ -2705,6 +2716,8 @@
     <string name="settings_backup_share_title">Сохранить бэкап</string>
     <string name="settings_default_bg">Цвет фона заметки по умолчанию</string>
     <string name="settings_default_bg_hint">Новые заметки будут создаваться с этим фоном — цвет отдельной заметки всё ещё можно поменять в редакторе.</string>
+    <string name="settings_experimental_books_sub">Чтение PDF-файлов прямо в приложении, полностью офлайн</string>
+    <string name="settings_experimental_header">Экспериментальные функции</string>
     <string name="settings_language">Язык / Language</string>
     <string name="settings_text_color">Цвет текста в заметках</string>
     <string name="settings_theme">Тема оформления</string>
@@ -2717,6 +2730,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="switch_role">Switch</string>
     <string name="tab">Tab</string>
+    <string name="tab_with_count">%1$s (%2$d)</string>
     <string name="template_percent"><ns2:g id="percentage">%1$d</ns2:g> percent.</string>
     <string name="tooltip_description">tooltip</string>
     <string name="tooltip_label">show tooltip</string>
