@@ -2,6 +2,7 @@ package com.noteflow.app.ui.editor
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.animateContentSize
@@ -25,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.layout.ContentScale
@@ -51,16 +53,25 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
     val context = LocalContext.current
     val viewModel: EditorViewModel = viewModel(factory = ViewModelFactory(context))
     val state by viewModel.state.collectAsState()
+
+    LaunchedEffect(noteId) { viewModel.load(noteId, forceListType) }
+
+    // Gate the whole screen behind a password prompt until unlocked this session.
+    if (state.loaded && state.isLocked && !state.unlocked) {
+        PasswordGateScreen(onUnlock = { password -> viewModel.unlock(password) }, onBack = onBack)
+        return
+    }
+
     val settingsRepository = remember { (context.applicationContext as NoteFlowApp).settingsRepository }
     val textColorOption by settingsRepository.textColor.collectAsState()
     val isDark = com.noteflow.app.ui.theme.LocalIsDarkTheme.current
     var showColorPicker by remember { mutableStateOf(false) }
     var showLabelEditor by remember { mutableStateOf(false) }
     var showExportMenu by remember { mutableStateOf(false) }
+    var showSetPasswordDialog by remember { mutableStateOf(false) }
+    var showManagePasswordDialog by remember { mutableStateOf(false) }
     var fullscreenImageUri by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
-
-    LaunchedEffect(noteId) { viewModel.load(noteId, forceListType) }
 
     val imagePicker = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let { viewModel.addImage(it.toString()) }
@@ -91,6 +102,15 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                     }
                     IconButton(onClick = { showReminderPicker(context) { millis -> viewModel.updateReminder(millis) } }) {
                         Icon(Icons.Default.Alarm, contentDescription = "Напоминание", tint = if (state.reminderAt != null) MaterialTheme.colorScheme.primary else LocalContentColor.current)
+                    }
+                    IconButton(onClick = {
+                        if (state.isLocked) showManagePasswordDialog = true else showSetPasswordDialog = true
+                    }) {
+                        Icon(
+                            if (state.isLocked) Icons.Default.Lock else Icons.Default.LockOpen,
+                            contentDescription = if (state.isLocked) "Заметка защищена паролем" else "Установить пароль",
+                            tint = if (state.isLocked) MaterialTheme.colorScheme.primary else LocalContentColor.current
+                        )
                     }
                     IconButton(onClick = { showExportMenu = true }) {
                         Icon(Icons.Default.Share, contentDescription = "Экспорт")
@@ -207,10 +227,153 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
             onDismiss = { showExportMenu = false }
         )
     }
+    if (showSetPasswordDialog) {
+        SetPasswordDialog(
+            isChanging = state.isLocked,
+            onConfirm = { password -> viewModel.setPassword(password); showSetPasswordDialog = false },
+            onDismiss = { showSetPasswordDialog = false }
+        )
+    }
+    if (showManagePasswordDialog) {
+        ManagePasswordDialog(
+            onChangePassword = { showManagePasswordDialog = false; showSetPasswordDialog = true },
+            onRemovePassword = { viewModel.removePassword(); showManagePasswordDialog = false },
+            onDismiss = { showManagePasswordDialog = false }
+        )
+    }
 
     fullscreenImageUri?.let { uri ->
         FullscreenImageViewer(uri = uri, onDismiss = { fullscreenImageUri = null })
     }
+}
+
+/** Full-screen prompt shown instead of the note content until the correct password is entered. */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun PasswordGateScreen(onUnlock: (String) -> Boolean, onBack: () -> Unit) {
+    var password by remember { mutableStateOf("") }
+    var error by remember { mutableStateOf(false) }
+
+    BackHandler(onBack = onBack)
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Заметка защищена паролем") },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Default.ArrowBack, contentDescription = "Назад") } }
+            )
+        }
+    ) { padding ->
+        Column(
+            Modifier
+                .padding(padding)
+                .fillMaxSize()
+                .imePadding()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(Icons.Default.Lock, contentDescription = null, modifier = Modifier.size(48.dp))
+            Spacer(Modifier.height(16.dp))
+            Text("Введите пароль, чтобы открыть заметку", style = MaterialTheme.typography.bodyLarge)
+            Spacer(Modifier.height(16.dp))
+            OutlinedTextField(
+                value = password,
+                onValueChange = { password = it; error = false },
+                label = { Text("Пароль") },
+                singleLine = true,
+                isError = error,
+                supportingText = { if (error) Text("Неверный пароль") },
+                visualTransformation = PasswordVisualTransformation(),
+                modifier = Modifier.fillMaxWidth()
+            )
+            Spacer(Modifier.height(16.dp))
+            Button(
+                onClick = { if (!onUnlock(password)) error = true },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Разблокировать")
+            }
+        }
+    }
+}
+
+@Composable
+private fun SetPasswordDialog(isChanging: Boolean, onConfirm: (String) -> Unit, onDismiss: () -> Unit) {
+    var password by remember { mutableStateOf("") }
+    var confirm by remember { mutableStateOf("") }
+    var error by remember { mutableStateOf<String?>(null) }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(if (isChanging) "Изменить пароль" else "Установить пароль") },
+        text = {
+            Column {
+                Text(
+                    "Длина пароля не ограничена. Запомните его — восстановить забытый пароль будет невозможно.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.outline
+                )
+                Spacer(Modifier.height(12.dp))
+                OutlinedTextField(
+                    value = password,
+                    onValueChange = { password = it; error = null },
+                    label = { Text("Пароль") },
+                    singleLine = true,
+                    visualTransformation = PasswordVisualTransformation(),
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = confirm,
+                    onValueChange = { confirm = it; error = null },
+                    label = { Text("Повторите пароль") },
+                    singleLine = true,
+                    visualTransformation = PasswordVisualTransformation(),
+                    modifier = Modifier.fillMaxWidth()
+                )
+                if (error != null) {
+                    Spacer(Modifier.height(4.dp))
+                    Text(error!!, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                when {
+                    password.isEmpty() -> error = "Введите пароль"
+                    password != confirm -> error = "Пароли не совпадают"
+                    else -> onConfirm(password)
+                }
+            }) { Text("Установить") }
+        },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Отмена") } }
+    )
+}
+
+@Composable
+private fun ManagePasswordDialog(onChangePassword: () -> Unit, onRemovePassword: () -> Unit, onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Пароль заметки") },
+        text = {
+            Column {
+                Text("Эта заметка защищена паролем.", style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.height(12.dp))
+                Text(
+                    "Изменить пароль",
+                    modifier = Modifier.fillMaxWidth().clickable(onClick = onChangePassword).padding(vertical = 12.dp)
+                )
+                Text(
+                    "Убрать пароль",
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.fillMaxWidth().clickable(onClick = onRemovePassword).padding(vertical = 12.dp)
+                )
+            }
+        },
+        confirmButton = {},
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Закрыть") } }
+    )
 }
 
 @Composable
@@ -243,7 +406,7 @@ private fun FullscreenImageViewer(uri: String, onDismiss: () -> Unit) {
 
 @Composable
 private fun BackHandlerSave(onSave: () -> Unit) {
-    androidx.activity.compose.BackHandler(onBack = onSave)
+    BackHandler(onBack = onSave)
 }
 
 @Composable

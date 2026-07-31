@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Note::class, ChecklistItem::class, NoteImage::class, Label::class, NoteLabelCrossRef::class, Birthday::class],
-    version = 2,
+    version = 3,
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -43,6 +43,18 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v2 -> v3: adds per-note password protection (passwordHash/passwordSalt
+         * columns on "notes"). Two plain ALTER TABLE ADD COLUMN statements — nothing
+         * else changes, every existing note and its password-less state survives.
+         */
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `notes` ADD COLUMN `passwordHash` TEXT")
+                db.execSQL("ALTER TABLE `notes` ADD COLUMN `passwordSalt` TEXT")
+            }
+        }
+
         fun getInstance(context: Context): AppDatabase =
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
@@ -50,10 +62,10 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "noteflow.db"
                 )
-                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     // Downgrading (reinstalling an older build over a newer DB) is rare
                     // and not something we promise to preserve — but a normal *upgrade*
-                    // never wipes data now that an explicit migration exists above.
+                    // never wipes data now that explicit migrations exist above.
                     .fallbackToDestructiveMigrationOnDowngrade()
                     .build().also { INSTANCE = it }
             }

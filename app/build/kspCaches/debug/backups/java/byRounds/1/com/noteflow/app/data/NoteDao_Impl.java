@@ -62,7 +62,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `notes` (`id`,`type`,`title`,`body`,`color`,`pinned`,`archived`,`inTrash`,`createdAt`,`modifiedAt`,`deletedAt`,`reminderAt`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `notes` (`id`,`type`,`title`,`body`,`color`,`pinned`,`archived`,`inTrash`,`createdAt`,`modifiedAt`,`deletedAt`,`reminderAt`,`passwordHash`,`passwordSalt`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -90,6 +90,16 @@ public final class NoteDao_Impl implements NoteDao {
           statement.bindNull(12);
         } else {
           statement.bindLong(12, entity.getReminderAt());
+        }
+        if (entity.getPasswordHash() == null) {
+          statement.bindNull(13);
+        } else {
+          statement.bindString(13, entity.getPasswordHash());
+        }
+        if (entity.getPasswordSalt() == null) {
+          statement.bindNull(14);
+        } else {
+          statement.bindString(14, entity.getPasswordSalt());
         }
       }
     };
@@ -143,7 +153,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`type` = ?,`title` = ?,`body` = ?,`color` = ?,`pinned` = ?,`archived` = ?,`inTrash` = ?,`createdAt` = ?,`modifiedAt` = ?,`deletedAt` = ?,`reminderAt` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`type` = ?,`title` = ?,`body` = ?,`color` = ?,`pinned` = ?,`archived` = ?,`inTrash` = ?,`createdAt` = ?,`modifiedAt` = ?,`deletedAt` = ?,`reminderAt` = ?,`passwordHash` = ?,`passwordSalt` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -172,7 +182,17 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindLong(12, entity.getReminderAt());
         }
-        statement.bindLong(13, entity.getId());
+        if (entity.getPasswordHash() == null) {
+          statement.bindNull(13);
+        } else {
+          statement.bindString(13, entity.getPasswordHash());
+        }
+        if (entity.getPasswordSalt() == null) {
+          statement.bindNull(14);
+        } else {
+          statement.bindString(14, entity.getPasswordSalt());
+        }
+        statement.bindLong(15, entity.getId());
       }
     };
     this.__preparedStmtOfHardDeleteNote = new SharedSQLiteStatement(__db) {
@@ -455,6 +475,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -496,7 +518,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -534,6 +568,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -575,7 +611,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -613,6 +661,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -654,7 +704,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -791,6 +853,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -832,7 +896,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -876,6 +952,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -917,7 +995,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -957,6 +1047,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final Note _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -997,7 +1089,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
           } else {
             _result = null;
           }
@@ -1039,6 +1143,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final Note _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -1079,7 +1185,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
           } else {
             _result = null;
           }
@@ -1115,6 +1233,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -1156,7 +1276,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;
@@ -1191,6 +1323,8 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
           final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -1232,7 +1366,19 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt);
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
             _result.add(_item);
           }
           return _result;

@@ -191,6 +191,7 @@
   <com.android.lint/>
   <com.android.ndk.thirdparty/>
   <com.android.privacy-sandbox-sdk/>
+  <com.android.r8/>
   <com.android.reporting/>
   <com.android.security.autorepro/>
   <com.android.security.autorepro.apptest/>
@@ -262,6 +263,7 @@
   <com.google.android.instantapps/>
   <com.google.android.instantapps.thirdpartycompat/>
   <com.google.android.libraries.ads.mobile.sdk/>
+  <com.google.android.libraries.bettertogether.fastpair/>
   <com.google.android.libraries.car/>
   <com.google.android.libraries.cloud.telco.subgraph/>
   <com.google.android.libraries.enterprise.amapi/>

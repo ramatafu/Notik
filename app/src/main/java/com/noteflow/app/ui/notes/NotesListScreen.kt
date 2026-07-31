@@ -317,6 +317,13 @@ private fun NoteCard(
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.weight(1f)
             )
+            if (note.passwordHash != null) {
+                Icon(
+                    Icons.Default.Lock,
+                    contentDescription = "Защищена паролем",
+                    modifier = Modifier.size(16.dp).padding(end = if (note.pinned) 4.dp else 0.dp)
+                )
+            }
             if (note.pinned) Icon(Icons.Default.PushPin, contentDescription = "Закреплено", modifier = Modifier.size(16.dp))
         }
         Spacer(Modifier.height(2.dp))
@@ -326,12 +333,21 @@ private fun NoteCard(
             color = MaterialTheme.colorScheme.outline
         )
         Spacer(Modifier.height(6.dp))
-        Text(
-            parseMarkupToAnnotatedString(note.body),
-            style = MaterialTheme.typography.bodySmall,
-            maxLines = 6,
-            overflow = TextOverflow.Ellipsis
-        )
+        if (note.passwordHash != null) {
+            Text(
+                "Содержимое скрыто",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.outline,
+                fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
+            )
+        } else {
+            Text(
+                parseMarkupToAnnotatedString(note.body),
+                style = MaterialTheme.typography.bodySmall,
+                maxLines = 6,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
         Spacer(Modifier.height(8.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
             if (!inTrash) {

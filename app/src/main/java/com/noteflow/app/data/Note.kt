@@ -27,7 +27,9 @@ data class Note(
     val createdAt: Long = System.currentTimeMillis(),
     val modifiedAt: Long = System.currentTimeMillis(),
     val deletedAt: Long? = null,         // used to auto-purge trash after 7 days
-    val reminderAt: Long? = null         // epoch millis, null = no reminder
+    val reminderAt: Long? = null,        // epoch millis, null = no reminder
+    val passwordHash: String? = null,    // SHA-256(salt + password), Base64 — null = not locked
+    val passwordSalt: String? = null     // random per-note salt, Base64
 )
 
 /** A single checkable line inside a LIST-type note. */

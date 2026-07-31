@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noteflow.app.data.*
 import com.noteflow.app.reminder.ReminderScheduler
+import com.noteflow.app.security.PasswordUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,8 +22,16 @@ data class EditorState(
     val images: List<NoteImage> = emptyList(),
     val labels: List<String> = emptyList(),
     val reminderAt: Long? = null,
+    val passwordHash: String? = null,
+    val passwordSalt: String? = null,
+    // Session-only: true once the correct password has been entered this time
+    // around. Always true for notes with no password. Resets every time you
+    // navigate away and back into a locked note.
+    val unlocked: Boolean = true,
     val loaded: Boolean = false
-)
+) {
+    val isLocked: Boolean get() = passwordHash != null
+}
 
 class EditorViewModel(
     private val repository: NotesRepository,
@@ -62,6 +71,9 @@ class EditorViewModel(
                     images = full.images,
                     labels = full.labels,
                     reminderAt = full.note.reminderAt,
+                    passwordHash = full.note.passwordHash,
+                    passwordSalt = full.note.passwordSalt,
+                    unlocked = full.note.passwordHash == null,
                     loaded = true
                 )
             } else {
@@ -86,6 +98,30 @@ class EditorViewModel(
     }
     fun switchType(type: NoteType) { _state.value = _state.value.copy(type = type) }
 
+    /** Checks a candidate password against the stored hash. Unlocks the session state on success. */
+    fun unlock(password: String): Boolean {
+        val s = _state.value
+        val salt = s.passwordSalt
+        val hash = s.passwordHash
+        val ok = hash != null && salt != null && PasswordUtils.verify(password, salt, hash)
+        if (ok) _state.value = s.copy(unlocked = true)
+        return ok
+    }
+
+    /** Sets (or replaces) this note's password and persists immediately — no length limit. */
+    fun setPassword(password: String) = viewModelScope.launch {
+        val salt = PasswordUtils.generateSalt()
+        val hash = PasswordUtils.hash(password, salt)
+        _state.value = _state.value.copy(passwordHash = hash, passwordSalt = salt, unlocked = true)
+        persistNow()
+    }
+
+    /** Removes the password protection from this note and persists immediately. */
+    fun removePassword() = viewModelScope.launch {
+        _state.value = _state.value.copy(passwordHash = null, passwordSalt = null, unlocked = true)
+        persistNow()
+    }
+
     /** Persists the note and (re)schedules or cancels its reminder as needed. Returns the saved note id. */
     fun save(onSaved: (Long) -> Unit = {}) = viewModelScope.launch {
         val s = _state.value
@@ -94,6 +130,14 @@ class EditorViewModel(
             return@launch
         }
 
+        val id = persistNow()
+        onSaved(id)
+    }
+
+    /** Builds a Note from the current state and writes it through the repository. Always includes
+     *  the password fields, so a regular save() never accidentally wipes a note's lock. */
+    private suspend fun persistNow(): Long {
+        val s = _state.value
         val note = Note(
             id = s.id,
             type = s.type,
@@ -102,12 +146,14 @@ class EditorViewModel(
             color = s.color,
             pinned = s.pinned,
             reminderAt = s.reminderAt,
-            modifiedAt = System.currentTimeMillis()
+            modifiedAt = System.currentTimeMillis(),
+            passwordHash = s.passwordHash,
+            passwordSalt = s.passwordSalt
         )
         val id = repository.saveNote(note, s.checklist, s.images, s.labels)
         val savedNote = note.copy(id = id)
         _state.value = _state.value.copy(id = id)
         if (s.reminderAt != null) ReminderScheduler.schedule(appContext, savedNote) else ReminderScheduler.cancel(appContext, id)
-        onSaved(id)
+        return id
     }
 }
