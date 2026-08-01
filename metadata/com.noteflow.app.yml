@@ -1,1 +1,37 @@
+Categories:
+  - Productivity
+License: GPL-3.0-only
+AuthorName: ram
+WebSite: https://github.com/ramatafu/Notik
+SourceCode: https://github.com/ramatafu/Notik
+IssueTracker: https://github.com/ramatafu/Notik/issues
 
+AutoName: Notik
+
+Summary: Минималистичные заметки с акцентом на приватность
+Description: |
+    Notik — это простой и приватный блокнотик для ваших заметок.
+
+    Особенности:
+    * 📝 Заметки с форматированием (жирный, курсив, моноширинный)
+    * ✅ Чек-листы
+    * 🎂 Дни рождения с напоминаниями
+    * 🔒 Защита заметок паролем
+    * 🌙 Светлая и тёмная тема
+    * 📦 Резервное копирование и восстановление из ZIP
+    * 📤 Экспорт в TXT, JSON, HTML, PDF
+    * 🌐 Поддержка русского и английского языков
+
+    Приложение полностью офлайн и не требует доступа в интернет.
+    Все данные хранятся только на вашем устройстве.
+
+Builds:
+  - versionName: 0.1.2
+    versionCode: 12
+    commit: v0.1.2
+    subdir: app
+    gradle:
+      - yes
+
+MaintainerNotes: |
+    Автор проекта, поддерживаю приложение самостоятельно.
