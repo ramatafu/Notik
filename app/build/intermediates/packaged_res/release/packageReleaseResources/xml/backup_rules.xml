@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="noteflow.db" />
+    <include domain="database" path="noteflow.db-shm" />
+    <include domain="database" path="noteflow.db-wal" />
+    <include domain="sharedpref" path="noteflow_settings.xml" />
+</full-backup-content>

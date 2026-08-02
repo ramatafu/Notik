@@ -6,8 +6,6 @@
     <string name="clear_trash_confirm_action">Delete all</string>
     <string name="clear_trash_confirm_body">All notes in trash will be permanently deleted. This cannot be undone.</string>
     <string name="clear_trash_confirm_title">Empty trash?</string>
-    <string name="color_bg_black">Black</string>
-    <string name="color_bg_white">White</string>
     <string name="color_black">Black</string>
     <string name="color_blue">Blue</string>
     <string name="color_green">Green</string>
@@ -42,8 +40,6 @@
     <string name="settings_backup_restore_sub">Import notes from a .zip file</string>
     <string name="settings_backup_section">Backup</string>
     <string name="settings_backup_share_title">Save backup</string>
-    <string name="settings_default_bg">Default note background</string>
-    <string name="settings_default_bg_hint">New notes will use this background — you can still change an individual note\'s color in the editor.</string>
     <string name="settings_experimental_books_sub">Read PDF files right in the app, fully offline</string>
     <string name="settings_experimental_header">Experimental features</string>
     <string name="settings_language">Язык / Language</string>

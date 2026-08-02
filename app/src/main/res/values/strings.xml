@@ -33,8 +33,6 @@
     <string name="settings_theme_light">Светлая</string>
     <string name="settings_theme_dark">Тёмная</string>
     <string name="settings_text_color">Цвет текста в заметках</string>
-    <string name="settings_default_bg">Цвет фона заметки по умолчанию</string>
-    <string name="settings_default_bg_hint">Новые заметки будут создаваться с этим фоном — цвет отдельной заметки всё ещё можно поменять в редакторе.</string>
     <string name="settings_backup_section">Резервное копирование</string>
     <string name="settings_backup_create">Создать резервную копию</string>
     <string name="settings_backup_create_sub">Экспорт всех заметок в один .zip-файл</string>
@@ -62,6 +60,4 @@
     <string name="color_white">Белый</string>
 
     <!-- Default note background colors -->
-    <string name="color_bg_white">Белый</string>
-    <string name="color_bg_black">Чёрный</string>
 </resources>

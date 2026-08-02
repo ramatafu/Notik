@@ -35,8 +35,6 @@ import com.noteflow.app.backup.BackupManager
 import com.noteflow.app.data.AppLanguage
 import com.noteflow.app.data.NoteTextColor
 import com.noteflow.app.data.ThemeMode
-import com.noteflow.app.ui.theme.DefaultNoteBackgroundOptions
-import com.noteflow.app.ui.theme.NoteColorPalette
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -49,7 +47,6 @@ fun SettingsScreen(onBack: () -> Unit) {
 
     val themeMode by settingsRepository.themeMode.collectAsState()
     val textColor by settingsRepository.textColor.collectAsState()
-    val defaultNoteColor by settingsRepository.defaultNoteColor.collectAsState()
     val language by settingsRepository.language.collectAsState()
     val booksEnabled by settingsRepository.booksEnabled.collectAsState()
 
@@ -121,39 +118,6 @@ fun SettingsScreen(onBack: () -> Unit) {
 
             Spacer(Modifier.height(24.dp))
 
-            SectionTitle(stringResource(R.string.settings_default_bg))
-            Text(
-                stringResource(R.string.settings_default_bg_hint),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.outline,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
-            Spacer(Modifier.height(8.dp))
-            Row(
-                Modifier.padding(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(20.dp)
-            ) {
-                DefaultNoteBackgroundOptions.forEach { key ->
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        ColorSwatch(
-                            color = NoteColorPalette.getValue(key),
-                            selected = key == defaultNoteColor,
-                            onClick = { settingsRepository.setDefaultNoteColor(key) },
-                            showBorder = true
-                        )
-                        Spacer(Modifier.height(4.dp))
-                        val label = when (key) {
-                            "White" -> stringResource(R.string.color_bg_white)
-                            "Black" -> stringResource(R.string.color_bg_black)
-                            else -> key
-                        }
-                        Text(label, style = MaterialTheme.typography.labelSmall)
-                    }
-                }
-            }
-
-            Spacer(Modifier.height(24.dp))
-
             SectionTitle(stringResource(R.string.settings_backup_section))
             SettingsRow(stringResource(R.string.settings_backup_create), stringResource(R.string.settings_backup_create_sub)) {
                 scope.launch {
@@ -212,12 +176,12 @@ fun SettingsScreen(onBack: () -> Unit) {
                 val linkUrl = "https://github.com/ramatafu/Notik"
                 val linkText = "github.com/ramatafu/Notik"
                 val uriHandler = LocalUriHandler.current
-                val primaryColor = MaterialTheme.colorScheme.primary
-                val annotatedSource = remember(sourceLabel, primaryColor) {
+                val linkColor = com.noteflow.app.ui.theme.LinkBlue
+                val annotatedSource = remember(sourceLabel, linkColor) {
                     buildAnnotatedString {
                         append("$sourceLabel ")
                         pushStringAnnotation(tag = "URL", annotation = linkUrl)
-                        withStyle(SpanStyle(color = primaryColor, textDecoration = TextDecoration.Underline)) {
+                        withStyle(SpanStyle(color = linkColor, textDecoration = TextDecoration.Underline)) {
                             append(linkText)
                         }
                         pop()

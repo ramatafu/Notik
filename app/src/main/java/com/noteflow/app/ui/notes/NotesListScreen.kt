@@ -117,7 +117,7 @@ fun NotesListScreen(
                 Text(
                     stringResource(R.string.app_name),
                     style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.padding(end = 16.dp)
                 )
             }
@@ -135,7 +135,7 @@ fun NotesListScreen(
                     )
                     if (tab == NotesTab.TRASH && notes.isNotEmpty()) {
                         TextButton(onClick = { showClearTrashDialog = true }, modifier = Modifier.padding(end = 8.dp)) {
-                            Text(stringResource(R.string.clear_trash))
+                            Text(stringResource(R.string.clear_trash), color = com.noteflow.app.ui.theme.AccentRed)
                         }
                     }
                 }
@@ -277,7 +277,7 @@ private fun MenuTabRow(label: String, selected: Boolean, onClick: () -> Unit) {
         label,
         style = MaterialTheme.typography.titleMedium,
         fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal,
-        color = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+        color = if (selected) com.noteflow.app.ui.theme.AccentRed else MaterialTheme.colorScheme.onSurface,
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick)
@@ -352,7 +352,7 @@ private fun NoteCard(
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
             if (!inTrash) {
                 IconButton(onClick = onTogglePin, modifier = Modifier.size(40.dp)) {
-                    Icon(Icons.Default.PushPin, contentDescription = null, tint = if (note.pinned) MaterialTheme.colorScheme.primary else Color.Gray)
+                    Icon(Icons.Default.PushPin, contentDescription = null, tint = if (note.pinned) com.noteflow.app.ui.theme.AccentRed else Color.Gray)
                 }
                 IconButton(onClick = onArchive, enabled = !note.pinned, modifier = Modifier.size(40.dp)) {
                     Icon(

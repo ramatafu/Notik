@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.collectAsState
@@ -47,8 +48,17 @@ class MainActivity : AppCompatActivity() {
             // white in light theme, per explicit request. isAppearanceLightStatusBars
             // is named from the OS's point of view (true = a light bar background,
             // so it picks DARK icons for contrast) — hence it's set to darkTheme here.
+            //
+            // Also forces the Activity's night mode to match our in-app theme toggle
+            // (not the phone's system setting) — this is what makes native dialogs
+            // like the reminder/birthday date & time pickers pick up values-night/
+            // themes.xml correctly, instead of following the phone's own light/dark
+            // setting regardless of what's chosen in our Settings screen.
             val view = LocalView.current
             SideEffect {
+                AppCompatDelegate.setDefaultNightMode(
+                    if (darkTheme) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+                )
                 val insetsController = WindowCompat.getInsetsController(window, view)
                 insetsController.isAppearanceLightStatusBars = darkTheme
             }

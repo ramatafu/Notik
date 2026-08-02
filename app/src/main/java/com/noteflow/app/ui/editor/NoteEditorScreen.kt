@@ -73,8 +73,8 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
     var fullscreenImageUri by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
 
-    val imagePicker = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-        uri?.let { viewModel.addImage(it.toString()) }
+    val imagePicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri?.let { viewModel.addImage(it) }
     }
 
     BackHandlerSave(onSave = { viewModel.save { onBack() } })
@@ -89,7 +89,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                     }
                 },
                 actions = {
-                    IconButton(onClick = { imagePicker.launch("image/*") }) {
+                    IconButton(onClick = { imagePicker.launch(arrayOf("image/*")) }) {
                         Icon(Icons.Default.Image, contentDescription = "Добавить изображение")
                     }
                     if (!isDark) {
@@ -101,7 +101,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                         Icon(Icons.Default.Label, contentDescription = "Метки")
                     }
                     IconButton(onClick = { showReminderPicker(context) { millis -> viewModel.updateReminder(millis) } }) {
-                        Icon(Icons.Default.Alarm, contentDescription = "Напоминание", tint = if (state.reminderAt != null) MaterialTheme.colorScheme.primary else LocalContentColor.current)
+                        Icon(Icons.Default.Alarm, contentDescription = "Напоминание", tint = if (state.reminderAt != null) com.noteflow.app.ui.theme.AccentRed else LocalContentColor.current)
                     }
                     IconButton(onClick = {
                         if (state.isLocked) showManagePasswordDialog = true else showSetPasswordDialog = true
@@ -109,7 +109,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                         Icon(
                             if (state.isLocked) Icons.Default.Lock else Icons.Default.LockOpen,
                             contentDescription = if (state.isLocked) "Заметка защищена паролем" else "Установить пароль",
-                            tint = if (state.isLocked) MaterialTheme.colorScheme.primary else LocalContentColor.current
+                            tint = if (state.isLocked) com.noteflow.app.ui.theme.AccentRed else LocalContentColor.current
                         )
                     }
                     IconButton(onClick = { showExportMenu = true }) {
@@ -510,7 +510,7 @@ private fun LabelPickerSheet(selected: List<String>, onChange: (List<String>) ->
 @Composable
 private fun ExportMenuSheet(onPick: (ExportFormat) -> Unit, onDismiss: () -> Unit) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
-        Column(Modifier.padding(16.dp)) {
+        Column(Modifier.padding(16.dp).padding(bottom = 64.dp)) {
             listOf(
                 ExportFormat.TXT to "Текст (.txt)",
                 ExportFormat.JSON to "JSON (.json)",

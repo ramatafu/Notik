@@ -11,8 +11,6 @@ string clear_trash
 string clear_trash_confirm_action
 string clear_trash_confirm_body
 string clear_trash_confirm_title
-string color_bg_black
-string color_bg_white
 string color_black
 string color_blue
 string color_green
@@ -47,8 +45,6 @@ string settings_backup_restore
 string settings_backup_restore_sub
 string settings_backup_section
 string settings_backup_share_title
-string settings_default_bg
-string settings_default_bg_hint
 string settings_experimental_books_sub
 string settings_experimental_header
 string settings_language
@@ -62,6 +58,8 @@ string tab_with_count
 string untitled_note
 string widget_label
 style Theme.NoteFlow
+xml backup_rules
+xml data_extraction_rules
 xml file_paths
 xml locales_config
 xml notes_widget_info

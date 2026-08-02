@@ -36,8 +36,17 @@ val NoteColorLabels: Map<String, String> = mapOf(
     "Black" to "Чёрный"
 )
 
-/** The only two options offered in Settings for the default background of new notes. */
-val DefaultNoteBackgroundOptions: List<String> = listOf("White", "Black")
-
 fun colorForKey(key: String): Color = NoteColorPalette[key] ?: NoteColorPalette.getValue("Default")
+
+/**
+ * Accent used for "active state" indicators (current section, pinned note, active
+ * reminder/lock icons, destructive actions like "empty trash"). Needed because the
+ * theme's own `primary` is now white in light mode / black in dark mode (see
+ * Theme.kt) — perfect for buttons, but invisible if used as a plain highlight color
+ * against a same-colored background. Chosen to read clearly on both white and black.
+ */
+val AccentRed = Color(0xFFE53935)
+
+/** Visible, conventional link color — also same-tone-safe against both themes. */
+val LinkBlue = Color(0xFF1565C0)
 

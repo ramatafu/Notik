@@ -46,11 +46,6 @@ class SettingsRepository private constructor(context: Context) {
     )
     val textColor: StateFlow<NoteTextColor> = _textColor
 
-    /** Palette key (see ui/theme/NoteColors.kt) used as the background for newly created notes.
-     *  Restricted to "White" / "Black" in Settings, per user request. */
-    private val _defaultNoteColor = MutableStateFlow(prefs.getString(KEY_DEFAULT_NOTE_COLOR, "White") ?: "White")
-    val defaultNoteColor: StateFlow<String> = _defaultNoteColor
-
     private val _language = MutableStateFlow(
         runCatching { AppLanguage.valueOf(prefs.getString(KEY_LANGUAGE, AppLanguage.RUSSIAN.name)!!) }
             .getOrDefault(AppLanguage.RUSSIAN)
@@ -76,11 +71,6 @@ class SettingsRepository private constructor(context: Context) {
         _textColor.value = color
     }
 
-    fun setDefaultNoteColor(paletteKey: String) {
-        prefs.edit().putString(KEY_DEFAULT_NOTE_COLOR, paletteKey).apply()
-        _defaultNoteColor.value = paletteKey
-    }
-
     /** Persists the choice and immediately re-locales the app (AppCompatActivity recreates itself). */
     fun setLanguage(language: AppLanguage) {
         prefs.edit().putString(KEY_LANGUAGE, language.name).apply()
@@ -91,7 +81,6 @@ class SettingsRepository private constructor(context: Context) {
     companion object {
         private const val KEY_THEME = "theme_mode"
         private const val KEY_TEXT_COLOR = "text_color"
-        private const val KEY_DEFAULT_NOTE_COLOR = "default_note_color"
         private const val KEY_LANGUAGE = "language"
         private const val KEY_BOOKS_ENABLED = "books_enabled"
 

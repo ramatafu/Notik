@@ -7,8 +7,6 @@
     <string name="clear_trash_confirm_action">Удалить всё</string>
     <string name="clear_trash_confirm_body">Все заметки в корзине будут удалены навсегда. Это действие нельзя отменить.</string>
     <string name="clear_trash_confirm_title">Очистить корзину?</string>
-    <string name="color_bg_black">Чёрный</string>
-    <string name="color_bg_white">Белый</string>
     <string name="color_black">Чёрный</string>
     <string name="color_blue">Синий</string>
     <string name="color_green">Зелёный</string>
@@ -43,8 +41,6 @@
     <string name="settings_backup_restore_sub">Импорт заметок из .zip-файла</string>
     <string name="settings_backup_section">Резервное копирование</string>
     <string name="settings_backup_share_title">Сохранить бэкап</string>
-    <string name="settings_default_bg">Цвет фона заметки по умолчанию</string>
-    <string name="settings_default_bg_hint">Новые заметки будут создаваться с этим фоном — цвет отдельной заметки всё ещё можно поменять в редакторе.</string>
     <string name="settings_experimental_books_sub">Чтение PDF-файлов прямо в приложении, полностью офлайн</string>
     <string name="settings_experimental_header">Экспериментальные функции</string>
     <string name="settings_language">Язык / Language</string>
@@ -57,5 +53,12 @@
     <string name="tab_with_count">%1$s (%2$d)</string>
     <string name="untitled_note">Без названия</string>
     <string name="widget_label">Заметки Notik</string>
-    <style name="Theme.NoteFlow" parent="Theme.Material3.DayNight.NoActionBar"/>
+    <style name="Theme.NoteFlow" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryVariant">@android:color/black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@android:color/black</item>
+        <item name="colorSecondaryVariant">@android:color/black</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
 </resources>

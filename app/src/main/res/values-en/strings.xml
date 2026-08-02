@@ -33,8 +33,6 @@
     <string name="settings_theme_light">Light</string>
     <string name="settings_theme_dark">Dark</string>
     <string name="settings_text_color">Note text color</string>
-    <string name="settings_default_bg">Default note background</string>
-    <string name="settings_default_bg_hint">New notes will use this background — you can still change an individual note\'s color in the editor.</string>
     <string name="settings_backup_section">Backup</string>
     <string name="settings_backup_create">Create backup</string>
     <string name="settings_backup_create_sub">Export all notes into a single .zip file</string>
@@ -62,6 +60,4 @@
     <string name="color_white">White</string>
 
     <!-- Default note background colors -->
-    <string name="color_bg_white">White</string>
-    <string name="color_bg_black">Black</string>
 </resources>

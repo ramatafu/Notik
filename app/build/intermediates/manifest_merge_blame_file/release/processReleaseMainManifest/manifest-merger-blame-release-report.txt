@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.noteflow.app"
 4    android:versionCode="9"
-5    android:versionName="0.1.1" >
+5    android:versionName="0.1.5" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="24"
@@ -20,503 +20,504 @@
 14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:5-81
 14-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:22-78
-15    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-76
-15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-73
-16    <uses-permission android:name="android.permission.VIBRATE" />
-16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-66
-16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-63
-17    <uses-permission android:name="android.permission.READ_CONTACTS" />
-17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:5-72
-17-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:22-69
-18    <uses-permission android:name="android.permission.WAKE_LOCK" />
-18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:5-68
-18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:22-65
-19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:5-77
-19-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:22-74
-20
-21    <permission
-21-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-22        android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-22-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-23        android:protectionLevel="signature" />
-23-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-24
-25    <uses-permission android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-25-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-25-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-26
-27    <application
-27-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:5-84:19
-28        android:name="com.noteflow.app.NoteFlowApp"
-28-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-36
-29        android:allowBackup="true"
-29-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:9-35
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+15    <uses-permission android:name="android.permission.VIBRATE" />
+15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-66
+15-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-63
+16    <uses-permission android:name="android.permission.READ_CONTACTS" />
+16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-72
+16-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-69
+17    <uses-permission android:name="android.permission.WAKE_LOCK" />
+17-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:5-68
+17-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:23:22-65
+18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:5-77
+18-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:26:22-74
+19
+20    <permission
+20-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+21        android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.noteflow.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:19:5-85:19
+27        android:name="com.noteflow.app.NoteFlowApp"
+27-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:9-36
+28        android:allowBackup="true"
+28-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+30        android:dataExtractionRules="@xml/data_extraction_rules"
+30-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:9-65
 31        android:extractNativeLibs="false"
-32        android:icon="@mipmap/ic_launcher"
-32-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:9-43
-33        android:label="@string/app_name"
-33-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:9-41
-34        android:localeConfig="@xml/locales_config"
-34-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:9-51
-35        android:supportsRtl="true"
-35-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:9-35
-36        android:theme="@style/Theme.NoteFlow" >
-36-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:9-46
-37        <activity
-37-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:29:9-45:20
-38            android:name="com.noteflow.app.MainActivity"
-38-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:30:13-41
-39            android:exported="true"
-39-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-36
-40            android:launchMode="singleTop"
-40-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:13-43
-41            android:theme="@style/Theme.NoteFlow"
-41-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:13-50
-42            android:windowSoftInputMode="adjustResize" >
-42-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:13-55
-43            <intent-filter>
-43-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:35:13-38:29
-44                <action android:name="android.intent.action.MAIN" />
-44-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:17-69
-44-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:25-66
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:17-77
-46-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:27-74
-47            </intent-filter>
-48            <!-- Deep link used by the widget to open a specific note -->
-49            <intent-filter>
-49-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:40:13-44:29
-50                <action android:name="android.intent.action.VIEW" />
-50-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:17-69
-50-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:25-66
-51
-52                <category android:name="android.intent.category.DEFAULT" />
-52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:17-76
-52-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:27-73
-53
-54                <data
-54-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:17-71
-55                    android:host="note"
-55-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:49-68
-56                    android:scheme="noteflow" />
-56-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:23-48
-57            </intent-filter>
-58        </activity>
-59
-60        <!-- Reminder notification receiver -->
-61        <receiver
-61-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:9-88
-62            android:name="com.noteflow.app.reminder.ReminderReceiver"
-62-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:19-60
-63            android:exported="false" />
-63-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:61-85
-64
-65        <!-- Birthday reminder notification receiver -->
-66        <receiver
-66-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:9-96
-67            android:name="com.noteflow.app.reminder.BirthdayReminderReceiver"
-67-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:19-68
-68            android:exported="false" />
-68-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:69-93
-69
-70        <!-- Reschedule reminders after a reboot -->
-71        <receiver
-71-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:9-58:20
-72            android:name="com.noteflow.app.reminder.BootReceiver"
-72-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:19-56
-73            android:exported="true" >
-73-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:57-80
-74            <intent-filter>
-74-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:13-57:29
-75                <action android:name="android.intent.action.BOOT_COMPLETED" />
-75-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:17-79
-75-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:25-76
-76            </intent-filter>
-77        </receiver>
-78
-79        <!-- Home-screen widget -->
-80        <receiver
-80-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:61:9-71:20
-81            android:name="com.noteflow.app.widget.NotesWidgetReceiver"
-81-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:62:13-55
-82            android:exported="false"
-82-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:63:13-37
-83            android:label="@string/widget_label" >
-83-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:64:13-49
-84            <intent-filter>
-84-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:65:13-67:29
-85                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-85-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:17-84
-85-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:25-81
-86            </intent-filter>
-87
-88            <meta-data
-88-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:68:13-70:61
-89                android:name="android.appwidget.provider"
-89-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:17-58
-90                android:resource="@xml/notes_widget_info" />
+32        android:fullBackupContent="@xml/backup_rules"
+32-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:9-54
+33        android:icon="@mipmap/ic_launcher"
+33-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:9-43
+34        android:label="@string/app_name"
+34-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:9-41
+35        android:localeConfig="@xml/locales_config"
+35-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:9-51
+36        android:supportsRtl="true"
+36-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:28:9-35
+37        android:theme="@style/Theme.NoteFlow" >
+37-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:9-46
+38        <activity
+38-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:30:9-46:20
+39            android:name="com.noteflow.app.MainActivity"
+39-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-41
+40            android:exported="true"
+40-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:13-36
+41            android:launchMode="singleTop"
+41-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:13-43
+42            android:theme="@style/Theme.NoteFlow"
+42-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:35:13-50
+43            android:windowSoftInputMode="adjustResize" >
+43-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:13-55
+44            <intent-filter>
+44-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:13-39:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:17-69
+45-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:38:17-77
+47-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:38:27-74
+48            </intent-filter>
+49            <!-- Deep link used by the widget to open a specific note -->
+50            <intent-filter>
+50-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:13-45:29
+51                <action android:name="android.intent.action.VIEW" />
+51-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:17-69
+51-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:25-66
+52
+53                <category android:name="android.intent.category.DEFAULT" />
+53-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:17-76
+53-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:27-73
+54
+55                <data
+55-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:17-71
+56                    android:host="note"
+56-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:49-68
+57                    android:scheme="noteflow" />
+57-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:23-48
+58            </intent-filter>
+59        </activity>
+60
+61        <!-- Reminder notification receiver -->
+62        <receiver
+62-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:9-88
+63            android:name="com.noteflow.app.reminder.ReminderReceiver"
+63-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:19-60
+64            android:exported="false" />
+64-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:61-85
+65
+66        <!-- Birthday reminder notification receiver -->
+67        <receiver
+67-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:9-96
+68            android:name="com.noteflow.app.reminder.BirthdayReminderReceiver"
+68-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:19-68
+69            android:exported="false" />
+69-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:69-93
+70
+71        <!-- Reschedule reminders after a reboot -->
+72        <receiver
+72-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:9-59:20
+73            android:name="com.noteflow.app.reminder.BootReceiver"
+73-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:19-56
+74            android:exported="true" >
+74-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:57-80
+75            <intent-filter>
+75-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:13-58:29
+76                <action android:name="android.intent.action.BOOT_COMPLETED" />
+76-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:17-79
+76-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:25-76
+77            </intent-filter>
+78        </receiver>
+79
+80        <!-- Home-screen widget -->
+81        <receiver
+81-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:62:9-72:20
+82            android:name="com.noteflow.app.widget.NotesWidgetReceiver"
+82-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:63:13-55
+83            android:exported="false"
+83-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:64:13-37
+84            android:label="@string/widget_label" >
+84-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:65:13-49
+85            <intent-filter>
+85-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:13-68:29
+86                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+86-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:67:17-84
+86-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:67:25-81
+87            </intent-filter>
+88
+89            <meta-data
+89-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:13-71:61
+90                android:name="android.appwidget.provider"
 90-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:70:17-58
-91        </receiver>
-92
-93        <!-- FileProvider for sharing exported files (PDF/HTML/TXT/JSON, images) -->
-94        <provider
-95            android:name="androidx.core.content.FileProvider"
-95-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:75:13-62
-96            android:authorities="com.noteflow.app.fileprovider"
-96-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:76:13-64
-97            android:exported="false"
-97-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:77:13-37
-98            android:grantUriPermissions="true" >
-98-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:78:13-47
-99            <meta-data
-99-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:79:13-81:54
-100                android:name="android.support.FILE_PROVIDER_PATHS"
-100-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:80:17-67
-101                android:resource="@xml/file_paths" />
-101-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:81:17-51
-102        </provider>
-103
-104        <activity
-104-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:23:9-28:62
-105            android:name="androidx.glance.appwidget.action.ActionTrampolineActivity"
-105-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:24:13-85
-106            android:enabled="true"
-106-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:25:13-35
-107            android:excludeFromRecents="true"
-107-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:26:13-46
-108            android:exported="false"
-108-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:27:13-37
-109            android:theme="@android:style/Theme.NoDisplay" />
-109-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:28:13-59
-110        <activity
-110-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:29:9-36:81
-111            android:name="androidx.glance.appwidget.action.InvisibleActionTrampolineActivity"
-111-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:30:13-94
-112            android:enabled="true"
-112-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:31:13-35
-113            android:exported="false"
-113-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:32:13-37
-114            android:launchMode="singleInstance"
-114-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:33:13-48
-115            android:noHistory="true"
-115-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:34:13-37
-116            android:taskAffinity="androidx.glance.appwidget.ListAdapterCallbackTrampoline"
-116-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:35:13-91
-117            android:theme="@style/Widget.Glance.AppWidget.CallbackTrampoline" />
-117-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:36:13-78
-118
-119        <receiver
-119-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:38:9-41:40
-120            android:name="androidx.glance.appwidget.action.ActionCallbackBroadcastReceiver"
-120-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:39:13-92
-121            android:enabled="true"
-121-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:40:13-35
-122            android:exported="false" />
-122-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:41:13-37
-123        <receiver
-123-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:42:9-45:40
-124            android:name="androidx.glance.appwidget.UnmanagedSessionReceiver"
-124-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:43:13-78
-125            android:enabled="true"
-125-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:44:13-35
-126            android:exported="false" />
-126-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:45:13-37
-127        <receiver
-127-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:46:9-53:20
-128            android:name="androidx.glance.appwidget.MyPackageReplacedReceiver"
-128-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:47:13-79
-129            android:enabled="true"
-129-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:48:13-35
-130            android:exported="false" >
-130-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:49:13-37
-131            <intent-filter>
-131-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:50:13-52:29
-132                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-132-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:51:17-84
-132-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:51:25-81
-133            </intent-filter>
-134        </receiver>
-135
-136        <service
-136-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:55:9-58:72
-137            android:name="androidx.glance.appwidget.GlanceRemoteViewsService"
-137-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:56:13-78
-138            android:exported="true"
-138-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:57:13-36
-139            android:permission="android.permission.BIND_REMOTEVIEWS" />
-139-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:58:13-69
-140
-141        <provider
-141-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:29:9-37:20
-142            android:name="androidx.startup.InitializationProvider"
-142-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:30:13-67
-143            android:authorities="com.noteflow.app.androidx-startup"
-143-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:31:13-68
-144            android:exported="false" >
-144-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:32:13-37
-145            <meta-data
-145-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:34:13-36:52
-146                android:name="androidx.work.WorkManagerInitializer"
-146-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:35:17-68
-147                android:value="androidx.startup" />
-147-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:36:17-49
-148            <meta-data
-148-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
-149                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-149-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
-150                android:value="androidx.startup" />
-150-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
-151            <meta-data
-151-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-152                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-152-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-153                android:value="androidx.startup" />
-153-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-154            <meta-data
-154-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-155                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-156                android:value="androidx.startup" />
-156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-157        </provider>
-158
-159        <service
-159-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:39:9-45:35
-160            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-160-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:40:13-88
-161            android:directBootAware="false"
-161-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:41:13-44
-162            android:enabled="@bool/enable_system_alarm_service_default"
-162-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:42:13-72
-163            android:exported="false" />
-163-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:43:13-37
-164        <service
-164-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:46:9-52:35
-165            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-165-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:47:13-84
-166            android:directBootAware="false"
-166-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:48:13-44
-167            android:enabled="@bool/enable_system_job_service_default"
-167-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:49:13-70
-168            android:exported="true"
-168-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:50:13-36
-169            android:permission="android.permission.BIND_JOB_SERVICE" />
-169-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:51:13-69
-170        <service
-170-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:53:9-59:35
-171            android:name="androidx.work.impl.foreground.SystemForegroundService"
-171-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:54:13-81
-172            android:directBootAware="false"
-172-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:55:13-44
-173            android:enabled="@bool/enable_system_foreground_service_default"
-173-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:56:13-77
-174            android:exported="false" />
-174-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:57:13-37
-175
-176        <receiver
-176-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:61:9-66:35
-177            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-177-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:62:13-88
-178            android:directBootAware="false"
-178-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:63:13-44
-179            android:enabled="true"
-179-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:64:13-35
-180            android:exported="false" />
-180-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:65:13-37
-181        <receiver
-181-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:67:9-77:20
-182            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-182-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:68:13-106
-183            android:directBootAware="false"
-183-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:69:13-44
-184            android:enabled="false"
-184-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:70:13-36
-185            android:exported="false" >
-185-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:71:13-37
-186            <intent-filter>
-186-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:73:13-76:29
-187                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-187-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:74:17-87
-187-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:74:25-84
-188                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-188-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:75:17-90
-188-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:75:25-87
-189            </intent-filter>
-190        </receiver>
-191        <receiver
-191-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:78:9-88:20
-192            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-192-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:79:13-104
-193            android:directBootAware="false"
-193-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:80:13-44
-194            android:enabled="false"
-194-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:81:13-36
-195            android:exported="false" >
-195-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:82:13-37
-196            <intent-filter>
-196-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:84:13-87:29
-197                <action android:name="android.intent.action.BATTERY_OKAY" />
-197-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:85:17-77
-197-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:85:25-74
-198                <action android:name="android.intent.action.BATTERY_LOW" />
-198-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:86:17-76
-198-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:86:25-73
-199            </intent-filter>
-200        </receiver>
-201        <receiver
-201-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:89:9-99:20
-202            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-202-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:90:13-104
-203            android:directBootAware="false"
-203-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:91:13-44
-204            android:enabled="false"
-204-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:92:13-36
-205            android:exported="false" >
-205-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:93:13-37
-206            <intent-filter>
-206-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:95:13-98:29
-207                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-207-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:96:17-83
-207-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:96:25-80
-208                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-208-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:97:17-82
-208-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:97:25-79
-209            </intent-filter>
-210        </receiver>
-211        <receiver
-211-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:100:9-109:20
-212            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-212-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:101:13-103
-213            android:directBootAware="false"
-213-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:102:13-44
-214            android:enabled="false"
-214-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:103:13-36
-215            android:exported="false" >
-215-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:104:13-37
-216            <intent-filter>
-216-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:106:13-108:29
-217                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-217-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:107:17-79
-217-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:107:25-76
-218            </intent-filter>
-219        </receiver>
-220        <receiver
-220-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:110:9-121:20
-221            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-221-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:111:13-88
-222            android:directBootAware="false"
-222-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:112:13-44
-223            android:enabled="false"
-223-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:113:13-36
-224            android:exported="false" >
-224-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:114:13-37
-225            <intent-filter>
-225-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:116:13-120:29
-226                <action android:name="android.intent.action.BOOT_COMPLETED" />
-226-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:17-79
-226-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:25-76
-227                <action android:name="android.intent.action.TIME_SET" />
-227-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:17-73
-227-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:25-70
-228                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-228-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:119:17-81
-228-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:119:25-78
-229            </intent-filter>
-230        </receiver>
-231        <receiver
-231-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:122:9-131:20
-232            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-232-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:123:13-99
-233            android:directBootAware="false"
-233-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:124:13-44
-234            android:enabled="@bool/enable_system_alarm_service_default"
-234-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:125:13-72
-235            android:exported="false" >
-235-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:126:13-37
-236            <intent-filter>
-236-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:128:13-130:29
-237                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-237-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:129:17-98
-237-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:129:25-95
-238            </intent-filter>
-239        </receiver>
-240        <receiver
-240-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:132:9-142:20
-241            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-241-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:133:13-78
-242            android:directBootAware="false"
-242-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:134:13-44
-243            android:enabled="true"
-243-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:135:13-35
-244            android:exported="true"
-244-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:136:13-36
-245            android:permission="android.permission.DUMP" >
-245-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:137:13-57
-246            <intent-filter>
-246-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:139:13-141:29
-247                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-247-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:140:17-88
-247-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:140:25-85
-248            </intent-filter>
-249        </receiver>
-250
-251        <service
-251-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:24:9-27:63
-252            android:name="androidx.core.widget.RemoteViewsCompatService"
-252-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:25:13-73
-253            android:permission="android.permission.BIND_REMOTEVIEWS" />
-253-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:26:13-69
-254        <service
-254-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-255            android:name="androidx.room.MultiInstanceInvalidationService"
-255-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-256            android:directBootAware="true"
-256-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-257            android:exported="false" />
-257-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-258
-259        <receiver
-259-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-260            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-260-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-261            android:directBootAware="false"
-261-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-262            android:enabled="true"
-262-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-263            android:exported="true"
-263-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-264            android:permission="android.permission.DUMP" >
-264-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-265            <intent-filter>
-265-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-266                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-266-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-266-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-267            </intent-filter>
-268            <intent-filter>
-268-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-269                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-269-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-269-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-270            </intent-filter>
-271            <intent-filter>
-271-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-272                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-272-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-272-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-273            </intent-filter>
-274            <intent-filter>
-274-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-275                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-275-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-275-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-276            </intent-filter>
-277        </receiver>
-278    </application>
-279
-280</manifest>
+91                android:resource="@xml/notes_widget_info" />
+91-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:71:17-58
+92        </receiver>
+93
+94        <!-- FileProvider for sharing exported files (PDF/HTML/TXT/JSON, images) -->
+95        <provider
+96            android:name="androidx.core.content.FileProvider"
+96-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:76:13-62
+97            android:authorities="com.noteflow.app.fileprovider"
+97-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:77:13-64
+98            android:exported="false"
+98-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:78:13-37
+99            android:grantUriPermissions="true" >
+99-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:79:13-47
+100            <meta-data
+100-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:80:13-82:54
+101                android:name="android.support.FILE_PROVIDER_PATHS"
+101-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:81:17-67
+102                android:resource="@xml/file_paths" />
+102-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:82:17-51
+103        </provider>
+104
+105        <activity
+105-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:23:9-28:62
+106            android:name="androidx.glance.appwidget.action.ActionTrampolineActivity"
+106-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:24:13-85
+107            android:enabled="true"
+107-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:25:13-35
+108            android:excludeFromRecents="true"
+108-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:26:13-46
+109            android:exported="false"
+109-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:27:13-37
+110            android:theme="@android:style/Theme.NoDisplay" />
+110-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:28:13-59
+111        <activity
+111-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:29:9-36:81
+112            android:name="androidx.glance.appwidget.action.InvisibleActionTrampolineActivity"
+112-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:30:13-94
+113            android:enabled="true"
+113-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:31:13-35
+114            android:exported="false"
+114-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:32:13-37
+115            android:launchMode="singleInstance"
+115-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:33:13-48
+116            android:noHistory="true"
+116-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:34:13-37
+117            android:taskAffinity="androidx.glance.appwidget.ListAdapterCallbackTrampoline"
+117-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:35:13-91
+118            android:theme="@style/Widget.Glance.AppWidget.CallbackTrampoline" />
+118-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:36:13-78
+119
+120        <receiver
+120-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:38:9-41:40
+121            android:name="androidx.glance.appwidget.action.ActionCallbackBroadcastReceiver"
+121-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:39:13-92
+122            android:enabled="true"
+122-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:40:13-35
+123            android:exported="false" />
+123-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:41:13-37
+124        <receiver
+124-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:42:9-45:40
+125            android:name="androidx.glance.appwidget.UnmanagedSessionReceiver"
+125-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:43:13-78
+126            android:enabled="true"
+126-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:44:13-35
+127            android:exported="false" />
+127-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:45:13-37
+128        <receiver
+128-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:46:9-53:20
+129            android:name="androidx.glance.appwidget.MyPackageReplacedReceiver"
+129-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:47:13-79
+130            android:enabled="true"
+130-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:48:13-35
+131            android:exported="false" >
+131-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:49:13-37
+132            <intent-filter>
+132-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:50:13-52:29
+133                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+133-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:51:17-84
+133-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:51:25-81
+134            </intent-filter>
+135        </receiver>
+136
+137        <service
+137-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:55:9-58:72
+138            android:name="androidx.glance.appwidget.GlanceRemoteViewsService"
+138-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:56:13-78
+139            android:exported="true"
+139-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:57:13-36
+140            android:permission="android.permission.BIND_REMOTEVIEWS" />
+140-->[androidx.glance:glance-appwidget:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\5d461c765bb15cad58dddb7a907dbd8f\transformed\glance-appwidget-1.1.0\AndroidManifest.xml:58:13-69
+141
+142        <provider
+142-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:29:9-37:20
+143            android:name="androidx.startup.InitializationProvider"
+143-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:30:13-67
+144            android:authorities="com.noteflow.app.androidx-startup"
+144-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:31:13-68
+145            android:exported="false" >
+145-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:32:13-37
+146            <meta-data
+146-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:34:13-36:52
+147                android:name="androidx.work.WorkManagerInitializer"
+147-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:35:17-68
+148                android:value="androidx.startup" />
+148-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:36:17-49
+149            <meta-data
+149-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
+150                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+150-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
+151                android:value="androidx.startup" />
+151-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\Valuka\.gradle\caches\transforms-4\30b56e77498c803a46ee474377bf4619\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+152            <meta-data
+152-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+153                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+153-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+154                android:value="androidx.startup" />
+154-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Valuka\.gradle\caches\transforms-4\8d265db809aefe6ba535572b60a1cbcb\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+155            <meta-data
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+156                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+157                android:value="androidx.startup" />
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+158        </provider>
+159
+160        <service
+160-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:39:9-45:35
+161            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+161-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:40:13-88
+162            android:directBootAware="false"
+162-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:41:13-44
+163            android:enabled="@bool/enable_system_alarm_service_default"
+163-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:42:13-72
+164            android:exported="false" />
+164-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:43:13-37
+165        <service
+165-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:46:9-52:35
+166            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+166-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:47:13-84
+167            android:directBootAware="false"
+167-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:48:13-44
+168            android:enabled="@bool/enable_system_job_service_default"
+168-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:49:13-70
+169            android:exported="true"
+169-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:50:13-36
+170            android:permission="android.permission.BIND_JOB_SERVICE" />
+170-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:51:13-69
+171        <service
+171-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:53:9-59:35
+172            android:name="androidx.work.impl.foreground.SystemForegroundService"
+172-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:54:13-81
+173            android:directBootAware="false"
+173-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:55:13-44
+174            android:enabled="@bool/enable_system_foreground_service_default"
+174-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:56:13-77
+175            android:exported="false" />
+175-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:57:13-37
+176
+177        <receiver
+177-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:61:9-66:35
+178            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+178-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:62:13-88
+179            android:directBootAware="false"
+179-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:63:13-44
+180            android:enabled="true"
+180-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:64:13-35
+181            android:exported="false" />
+181-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:65:13-37
+182        <receiver
+182-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:67:9-77:20
+183            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+183-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:68:13-106
+184            android:directBootAware="false"
+184-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:69:13-44
+185            android:enabled="false"
+185-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:70:13-36
+186            android:exported="false" >
+186-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:71:13-37
+187            <intent-filter>
+187-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:73:13-76:29
+188                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+188-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:74:17-87
+188-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:74:25-84
+189                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+189-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:75:17-90
+189-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:75:25-87
+190            </intent-filter>
+191        </receiver>
+192        <receiver
+192-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:78:9-88:20
+193            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+193-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:79:13-104
+194            android:directBootAware="false"
+194-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:80:13-44
+195            android:enabled="false"
+195-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:81:13-36
+196            android:exported="false" >
+196-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:82:13-37
+197            <intent-filter>
+197-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:84:13-87:29
+198                <action android:name="android.intent.action.BATTERY_OKAY" />
+198-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:85:17-77
+198-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:85:25-74
+199                <action android:name="android.intent.action.BATTERY_LOW" />
+199-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:86:17-76
+199-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:86:25-73
+200            </intent-filter>
+201        </receiver>
+202        <receiver
+202-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:89:9-99:20
+203            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+203-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:90:13-104
+204            android:directBootAware="false"
+204-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:91:13-44
+205            android:enabled="false"
+205-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:92:13-36
+206            android:exported="false" >
+206-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:93:13-37
+207            <intent-filter>
+207-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:95:13-98:29
+208                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+208-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:96:17-83
+208-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:96:25-80
+209                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+209-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:97:17-82
+209-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:97:25-79
+210            </intent-filter>
+211        </receiver>
+212        <receiver
+212-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:100:9-109:20
+213            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+213-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:101:13-103
+214            android:directBootAware="false"
+214-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:102:13-44
+215            android:enabled="false"
+215-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:103:13-36
+216            android:exported="false" >
+216-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:104:13-37
+217            <intent-filter>
+217-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:106:13-108:29
+218                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+218-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:107:17-79
+218-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:107:25-76
+219            </intent-filter>
+220        </receiver>
+221        <receiver
+221-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:110:9-121:20
+222            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+222-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:111:13-88
+223            android:directBootAware="false"
+223-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:112:13-44
+224            android:enabled="false"
+224-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:113:13-36
+225            android:exported="false" >
+225-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:114:13-37
+226            <intent-filter>
+226-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:116:13-120:29
+227                <action android:name="android.intent.action.BOOT_COMPLETED" />
+227-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:17-79
+227-->C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:25-76
+228                <action android:name="android.intent.action.TIME_SET" />
+228-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:17-73
+228-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:118:25-70
+229                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+229-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:119:17-81
+229-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:119:25-78
+230            </intent-filter>
+231        </receiver>
+232        <receiver
+232-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:122:9-131:20
+233            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+233-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:123:13-99
+234            android:directBootAware="false"
+234-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:124:13-44
+235            android:enabled="@bool/enable_system_alarm_service_default"
+235-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:125:13-72
+236            android:exported="false" >
+236-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:126:13-37
+237            <intent-filter>
+237-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:128:13-130:29
+238                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+238-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:129:17-98
+238-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:129:25-95
+239            </intent-filter>
+240        </receiver>
+241        <receiver
+241-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:132:9-142:20
+242            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+242-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:133:13-78
+243            android:directBootAware="false"
+243-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:134:13-44
+244            android:enabled="true"
+244-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:135:13-35
+245            android:exported="true"
+245-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:136:13-36
+246            android:permission="android.permission.DUMP" >
+246-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:137:13-57
+247            <intent-filter>
+247-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:139:13-141:29
+248                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+248-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:140:17-88
+248-->[androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:140:25-85
+249            </intent-filter>
+250        </receiver>
+251
+252        <service
+252-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:24:9-27:63
+253            android:name="androidx.core.widget.RemoteViewsCompatService"
+253-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:25:13-73
+254            android:permission="android.permission.BIND_REMOTEVIEWS" />
+254-->[androidx.core:core-remoteviews:1.1.0] C:\Users\Valuka\.gradle\caches\transforms-4\021833592405b499c21eff73dcde8314\transformed\core-remoteviews-1.1.0\AndroidManifest.xml:26:13-69
+255        <service
+255-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+256            android:name="androidx.room.MultiInstanceInvalidationService"
+256-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+257            android:directBootAware="true"
+257-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+258            android:exported="false" />
+258-->[androidx.room:room-runtime:2.6.1] C:\Users\Valuka\.gradle\caches\transforms-4\3491be084682f777f2359a2bc8e00d91\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+259
+260        <receiver
+260-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+261            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+261-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+262            android:directBootAware="false"
+262-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+263            android:enabled="true"
+263-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+264            android:exported="true"
+264-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+265            android:permission="android.permission.DUMP" >
+265-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+266            <intent-filter>
+266-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+267                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+267-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+267-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+268            </intent-filter>
+269            <intent-filter>
+269-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+270                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+270-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+270-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+271            </intent-filter>
+272            <intent-filter>
+272-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+273                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+273-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+273-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+274            </intent-filter>
+275            <intent-filter>
+275-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+276                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+276-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+276-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Valuka\.gradle\caches\transforms-4\16e301cf918698b0162b7c845acd09ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+277            </intent-filter>
+278        </receiver>
+279    </application>
+280
+281</manifest>

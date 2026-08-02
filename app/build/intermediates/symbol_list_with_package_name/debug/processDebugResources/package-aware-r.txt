@@ -5110,8 +5110,6 @@ string clear_trash_confirm_body
 string clear_trash_confirm_title
 string close_drawer
 string close_sheet
-string color_bg_black
-string color_bg_white
 string color_black
 string color_blue
 string color_green
@@ -5334,8 +5332,6 @@ string settings_backup_restore
 string settings_backup_restore_sub
 string settings_backup_section
 string settings_backup_share_title
-string settings_default_bg
-string settings_default_bg_hint
 string settings_experimental_books_sub
 string settings_experimental_header
 string settings_language
@@ -6674,6 +6670,8 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml backup_rules
+xml data_extraction_rules
 xml file_paths
 xml locales_config
 xml notes_widget_info

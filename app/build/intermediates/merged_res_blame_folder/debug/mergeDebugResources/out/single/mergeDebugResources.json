@@ -28,8 +28,16 @@
         "source": "com.noteflow.app-main-80:/mipmap-xhdpi/ic_launcher.png"
     },
     {
+        "merged": "com.noteflow.app-debug-78:/xml_backup_rules.xml.flat",
+        "source": "com.noteflow.app-main-80:/xml/backup_rules.xml"
+    },
+    {
         "merged": "com.noteflow.app-debug-78:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.noteflow.app-main-80:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.noteflow.app-debug-78:/xml_data_extraction_rules.xml.flat",
+        "source": "com.noteflow.app-main-80:/xml/data_extraction_rules.xml"
     },
     {
         "merged": "com.noteflow.app-debug-78:/xml_locales_config.xml.flat",

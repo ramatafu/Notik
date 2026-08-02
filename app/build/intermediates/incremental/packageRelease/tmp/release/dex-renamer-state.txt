@@ -1,4 +1,4 @@
-#Fri Jul 31 22:30:52 MSK 2026
+#Sun Aug 02 20:58:58 MSK 2026
 base.0=C\:\\Users\\Valuka\\Desktop\\NoteFlow (Android)\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

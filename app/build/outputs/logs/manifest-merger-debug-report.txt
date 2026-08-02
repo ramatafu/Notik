@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:74:9-82:20
+INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:75:9-83:20
 	android:grantUriPermissions
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:78:13-47
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:79:13-47
 	android:authorities
 		INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:76:13-64
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:77:13-64
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:77:13-37
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:78:13-37
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:75:13-62
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:76:13-62
 manifest
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-85:12
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:2:1-86:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Valuka\.gradle\caches\transforms-4\38be1f04a714dfee07e2bd1c57595bfb\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [io.coil-kt:coil-compose:2.6.0] C:\Users\Valuka\.gradle\caches\transforms-4\fb42fe92e9e342792dd9904802940f70\transformed\coil-compose-2.6.0\AndroidManifest.xml:2:1-7:12
 MERGED from [io.coil-kt:coil-compose-base:2.6.0] C:\Users\Valuka\.gradle\caches\transforms-4\693aefb751cbd28e69f885d8821f454b\transformed\coil-compose-base-2.6.0\AndroidManifest.xml:2:1-7:12
@@ -138,34 +138,30 @@ MERGED from [androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\tr
 MERGED from [androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:25:5-81
 	android:name
 		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:8:22-78
-uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-76
-	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-73
 uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-66
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:5-66
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-63
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:9:22-63
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:5-72
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:5-72
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:11:22-69
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:10:22-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:5-87
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:16:5-87
 	tools:node
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:65-84
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:16:65-84
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:22-64
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:16:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:18:5-99
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:5-99
 REJECTED from [androidx.work:work-runtime:2.9.1] C:\Users\Valuka\.gradle\caches\transforms-4\17b9de30ffbdc289802d4e000b8da02d\transformed\work-runtime-2.9.1\AndroidManifest.xml:24:5-79
 	tools:node
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:18:77-96
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:77-96
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:18:22-76
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:17:22-76
 application
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:5-84:19
-INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:5-84:19
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:19:5-85:19
+INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:19:5-85:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Valuka\.gradle\caches\transforms-4\38be1f04a714dfee07e2bd1c57595bfb\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Valuka\.gradle\caches\transforms-4\38be1f04a714dfee07e2bd1c57595bfb\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Valuka\.gradle\caches\transforms-4\a5cf3c63d3d21b1fc115573ebc0bc063\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
@@ -195,109 +191,113 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Valuka\.gradle\cac
 	android:extractNativeLibs
 		INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml
 	android:localeConfig
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:9-51
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:9-51
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Valuka\.gradle\caches\transforms-4\e91d43edd169d12026c8450ba62b92db\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:27:9-35
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:28:9-35
 	android:label
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:9-41
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:9-43
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:24:9-43
 	android:allowBackup
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:25:9-46
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:26:9-46
+	android:dataExtractionRules
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:23:9-65
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:21:9-36
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:20:9-36
 activity#com.noteflow.app.MainActivity
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:29:9-45:20
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:30:9-46:20
 	android:launchMode
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:13-43
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:13-43
 	android:windowSoftInputMode
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:33:13-55
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:13-55
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:32:13-36
 	android:theme
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:34:13-50
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:35:13-50
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:30:13-41
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:31:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:35:13-38:29
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:13-39:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:17-69
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:36:25-66
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:17-77
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:38:17-77
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:37:27-74
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:38:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:host:note+data:scheme:noteflow
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:40:13-44:29
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:13-45:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:17-69
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:41:25-66
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:17-76
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:17-76
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:42:27-73
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:27-73
 data
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:17-71
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:17-71
 	android:host
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:49-68
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:49-68
 	android:scheme
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:43:23-48
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:44:23-48
 receiver#com.noteflow.app.reminder.ReminderReceiver
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:9-88
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:9-88
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:61-85
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:61-85
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:48:19-60
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:49:19-60
 receiver#com.noteflow.app.reminder.BirthdayReminderReceiver
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:9-96
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:9-96
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:69-93
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:69-93
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:51:19-68
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:52:19-68
 receiver#com.noteflow.app.reminder.BootReceiver
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:9-58:20
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:9-59:20
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:57-80
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:57-80
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:54:19-56
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:19-56
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:55:13-57:29
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:13-58:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:17-79
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:17-79
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:56:25-76
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:57:25-76
 receiver#com.noteflow.app.widget.NotesWidgetReceiver
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:61:9-71:20
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:62:9-72:20
 	android:label
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:64:13-49
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:65:13-49
 	android:exported
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:63:13-37
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:62:13-55
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:63:13-55
 intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:65:13-67:29
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:13-68:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:17-84
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:67:17-84
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:66:25-81
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:67:25-81
 meta-data#android.appwidget.provider
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:68:13-70:61
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:13-71:61
 	android:resource
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:71:17-58
+	android:name
 		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:70:17-58
-	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:69:17-58
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:79:13-81:54
+ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:80:13-82:54
 	android:resource
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:81:17-51
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:82:17-51
 	android:name
-		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:80:17-67
+		ADDED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml:81:17-67
 uses-sdk
 INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Valuka\Desktop\NoteFlow (Android)\app\src\main\AndroidManifest.xml
