@@ -1,4 +1,5 @@
 <img width="864" height="1821" alt="изображение" src="https://github.com/user-attachments/assets/66d26fc4-9806-48b3-84a8-baceef79e41d" />
+
 # Notik — минималистичный блокнотик
 
 **Notik** — это простое и приватное приложение для заметок на Android.
