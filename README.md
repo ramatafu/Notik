@@ -1,3 +1,4 @@
+<img width="1024" height="1536" alt="изображение" src="https://github.com/user-attachments/assets/f79600a9-973f-4679-8725-8a5ac42cec72" />
 <img width="864" height="1821" alt="изображение" src="https://github.com/user-attachments/assets/66d26fc4-9806-48b3-84a8-baceef79e41d" />
 
 # Notik — минималистичный блокнотик
