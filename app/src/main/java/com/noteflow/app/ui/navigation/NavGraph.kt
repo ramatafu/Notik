@@ -15,11 +15,11 @@ import com.noteflow.app.ui.settings.SettingsScreen
 
 object Routes {
     const val LIST = "list"
-    const val EDITOR = "editor/{noteId}/{isList}"
+    const val EDITOR = "editor/{noteId}/{isList}/{calendarDate}"
     const val LABELS = "labels"
     const val SETTINGS = "settings"
     const val BOOKS = "books"
-    fun editor(noteId: Long, isList: Boolean = false) = "editor/$noteId/$isList"
+    fun editor(noteId: Long, isList: Boolean = false, calendarDate: Long = 0L) = "editor/$noteId/$isList/$calendarDate"
 }
 
 @Composable
@@ -29,7 +29,7 @@ fun NoteFlowNavGraph(startNoteId: Long? = null) {
     NavHost(navController = navController, startDestination = Routes.LIST) {
         composable(Routes.LIST) {
             NotesListScreen(
-                onOpenNote = { id, isList -> navController.navigate(Routes.editor(id, isList)) },
+                onOpenNote = { id, isList, calendarDate -> navController.navigate(Routes.editor(id, isList, calendarDate)) },
                 onOpenLabels = { navController.navigate(Routes.LABELS) },
                 onOpenSettings = { navController.navigate(Routes.SETTINGS) },
                 onOpenBooks = { navController.navigate(Routes.BOOKS) }
@@ -39,12 +39,14 @@ fun NoteFlowNavGraph(startNoteId: Long? = null) {
             route = Routes.EDITOR,
             arguments = listOf(
                 navArgument("noteId") { type = NavType.LongType },
-                navArgument("isList") { type = NavType.BoolType; defaultValue = false }
+                navArgument("isList") { type = NavType.BoolType; defaultValue = false },
+                navArgument("calendarDate") { type = NavType.LongType; defaultValue = 0L }
             )
         ) { backStackEntry ->
             val noteId = backStackEntry.arguments?.getLong("noteId") ?: 0L
             val isList = backStackEntry.arguments?.getBoolean("isList") ?: false
-            NoteEditorScreen(noteId = noteId, forceListType = isList, onBack = { navController.popBackStack() })
+            val calendarDate = backStackEntry.arguments?.getLong("calendarDate")?.takeIf { it != 0L }
+            NoteEditorScreen(noteId = noteId, forceListType = isList, initialCalendarDate = calendarDate, onBack = { navController.popBackStack() })
         }
         composable(Routes.LABELS) {
             LabelsScreen(onBack = { navController.popBackStack() })

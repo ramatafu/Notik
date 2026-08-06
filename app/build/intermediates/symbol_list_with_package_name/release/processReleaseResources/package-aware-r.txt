@@ -5302,6 +5302,7 @@ string notes_search_placeholder
 string notes_tab_active
 string notes_tab_archived
 string notes_tab_birthdays
+string notes_tab_calendar
 string notes_tab_trash
 string off
 string on

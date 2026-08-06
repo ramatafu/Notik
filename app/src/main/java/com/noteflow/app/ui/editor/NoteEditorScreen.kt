@@ -49,12 +49,12 @@ import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () -> Unit) {
+fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, initialCalendarDate: Long? = null, onBack: () -> Unit) {
     val context = LocalContext.current
     val viewModel: EditorViewModel = viewModel(factory = ViewModelFactory(context))
     val state by viewModel.state.collectAsState()
 
-    LaunchedEffect(noteId) { viewModel.load(noteId, forceListType) }
+    LaunchedEffect(noteId) { viewModel.load(noteId, forceListType, initialCalendarDate) }
 
     // Gate the whole screen behind a password prompt until unlocked this session.
     if (state.loaded && state.isLocked && !state.unlocked) {
@@ -128,6 +128,16 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                 .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
+            state.calendarDate?.let { date ->
+                AssistChip(
+                    onClick = { viewModel.updateCalendarDate(null) },
+                    label = { Text(formatCalendarDateChip(date)) },
+                    leadingIcon = { Icon(Icons.Default.Event, contentDescription = null, modifier = Modifier.size(18.dp)) },
+                    trailingIcon = { Icon(Icons.Default.Close, contentDescription = "Отвязать от даты", modifier = Modifier.size(16.dp)) },
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+            }
+
             OutlinedTextField(
                 value = state.title,
                 onValueChange = viewModel::updateTitle,
@@ -135,6 +145,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                 textStyle = MaterialTheme.typography.titleLarge.copy(color = textColorOption.color),
                 modifier = Modifier.fillMaxWidth(),
                 colors = OutlinedTextFieldDefaults.colors(
+                        cursorColor = com.noteflow.app.ui.theme.AccentRed,
                     unfocusedBorderColor = Color.Transparent,
                     focusedBorderColor = Color.Transparent,
                     focusedTextColor = textColorOption.color,
@@ -187,6 +198,7 @@ fun NoteEditorScreen(noteId: Long, forceListType: Boolean = false, onBack: () ->
                         .fillMaxWidth()
                         .heightIn(min = 240.dp),
                     colors = OutlinedTextFieldDefaults.colors(
+                        cursorColor = com.noteflow.app.ui.theme.AccentRed,
                         unfocusedBorderColor = Color.Transparent,
                         focusedBorderColor = Color.Transparent,
                         focusedTextColor = textColorOption.color,
@@ -285,6 +297,7 @@ private fun PasswordGateScreen(onUnlock: (String) -> Boolean, onBack: () -> Unit
                 isError = error,
                 supportingText = { if (error) Text("Неверный пароль") },
                 visualTransformation = PasswordVisualTransformation(),
+                colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed),
                 modifier = Modifier.fillMaxWidth()
             )
             Spacer(Modifier.height(16.dp))
@@ -321,6 +334,7 @@ private fun SetPasswordDialog(isChanging: Boolean, onConfirm: (String) -> Unit, 
                     label = { Text("Пароль") },
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
+                    colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(8.dp))
@@ -330,6 +344,7 @@ private fun SetPasswordDialog(isChanging: Boolean, onConfirm: (String) -> Unit, 
                     label = { Text("Повторите пароль") },
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
+                    colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed),
                     modifier = Modifier.fillMaxWidth()
                 )
                 if (error != null) {
@@ -448,6 +463,7 @@ private fun ChecklistEditor(items: List<ChecklistItem>, onChange: (List<Checklis
                     ),
                     modifier = Modifier.weight(1f),
                     colors = OutlinedTextFieldDefaults.colors(
+                        cursorColor = com.noteflow.app.ui.theme.AccentRed,
                         unfocusedBorderColor = Color.Transparent,
                         focusedBorderColor = Color.Transparent,
                         focusedTextColor = textColor,
@@ -498,7 +514,7 @@ private fun LabelPickerSheet(selected: List<String>, onChange: (List<String>) ->
                 }
             }
             Row {
-                OutlinedTextField(value = newLabel, onValueChange = { newLabel = it }, placeholder = { Text("Новая метка") }, modifier = Modifier.weight(1f))
+                OutlinedTextField(value = newLabel, onValueChange = { newLabel = it }, placeholder = { Text("Новая метка") }, colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed), modifier = Modifier.weight(1f))
                 IconButton(onClick = { if (newLabel.isNotBlank()) { onChange(selected + newLabel); newLabel = "" } }) {
                     Icon(Icons.Default.Add, contentDescription = null)
                 }
@@ -531,4 +547,14 @@ private fun showReminderPicker(context: android.content.Context, onSet: (Long?) 
             onSet(cal.timeInMillis)
         }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
+}
+
+private val CHIP_MONTHS = listOf(
+    "января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря"
+)
+
+private fun formatCalendarDateChip(dateMillis: Long): String {
+    val cal = Calendar.getInstance().apply { timeInMillis = dateMillis }
+    return "${cal.get(Calendar.DAY_OF_MONTH)} ${CHIP_MONTHS[cal.get(Calendar.MONTH)]} ${cal.get(Calendar.YEAR)}"
 }

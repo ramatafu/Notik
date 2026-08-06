@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.noteflow.app"
     android:versionCode="9"
-    android:versionName="0.0.9" >
+    android:versionName="0.1.6" >
 
     <uses-sdk
         android:minSdkVersion="24"

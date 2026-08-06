@@ -2680,6 +2680,7 @@
     <string name="notes_tab_active">Заметки</string>
     <string name="notes_tab_archived">Архив</string>
     <string name="notes_tab_birthdays">Дни рождения</string>
+    <string name="notes_tab_calendar">Календарь</string>
     <string name="notes_tab_trash">Корзина</string>
     <string name="off">Off</string>
     <string name="on">On</string>

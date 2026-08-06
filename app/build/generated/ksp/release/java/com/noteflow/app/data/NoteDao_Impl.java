@@ -62,7 +62,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `notes` (`id`,`type`,`title`,`body`,`color`,`pinned`,`archived`,`inTrash`,`createdAt`,`modifiedAt`,`deletedAt`,`reminderAt`,`passwordHash`,`passwordSalt`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `notes` (`id`,`type`,`title`,`body`,`color`,`pinned`,`archived`,`inTrash`,`createdAt`,`modifiedAt`,`deletedAt`,`reminderAt`,`passwordHash`,`passwordSalt`,`calendarDate`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -100,6 +100,11 @@ public final class NoteDao_Impl implements NoteDao {
           statement.bindNull(14);
         } else {
           statement.bindString(14, entity.getPasswordSalt());
+        }
+        if (entity.getCalendarDate() == null) {
+          statement.bindNull(15);
+        } else {
+          statement.bindLong(15, entity.getCalendarDate());
         }
       }
     };
@@ -153,7 +158,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`type` = ?,`title` = ?,`body` = ?,`color` = ?,`pinned` = ?,`archived` = ?,`inTrash` = ?,`createdAt` = ?,`modifiedAt` = ?,`deletedAt` = ?,`reminderAt` = ?,`passwordHash` = ?,`passwordSalt` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`type` = ?,`title` = ?,`body` = ?,`color` = ?,`pinned` = ?,`archived` = ?,`inTrash` = ?,`createdAt` = ?,`modifiedAt` = ?,`deletedAt` = ?,`reminderAt` = ?,`passwordHash` = ?,`passwordSalt` = ?,`calendarDate` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -192,7 +197,12 @@ public final class NoteDao_Impl implements NoteDao {
         } else {
           statement.bindString(14, entity.getPasswordSalt());
         }
-        statement.bindLong(15, entity.getId());
+        if (entity.getCalendarDate() == null) {
+          statement.bindNull(15);
+        } else {
+          statement.bindLong(15, entity.getCalendarDate());
+        }
+        statement.bindLong(16, entity.getId());
       }
     };
     this.__preparedStmtOfHardDeleteNote = new SharedSQLiteStatement(__db) {
@@ -477,6 +487,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -530,7 +541,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -570,6 +587,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -623,7 +641,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -663,6 +687,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -716,7 +741,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -855,6 +886,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -908,7 +940,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -954,6 +992,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -1007,7 +1046,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -1049,6 +1094,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final Note _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -1101,7 +1147,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
           } else {
             _result = null;
           }
@@ -1145,6 +1197,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final Note _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -1197,7 +1250,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _result = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
           } else {
             _result = null;
           }
@@ -1235,6 +1294,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -1288,7 +1348,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -1325,6 +1391,7 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
           final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
           final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Note _item;
@@ -1378,7 +1445,13 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
             }
-            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt);
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
             _result.add(_item);
           }
           return _result;
@@ -1388,6 +1461,137 @@ public final class NoteDao_Impl implements NoteDao {
         }
       }
     }, $completion);
+  }
+
+  @Override
+  public Flow<List<Note>> observeNotesForDate(final long date) {
+    final String _sql = "SELECT * FROM notes WHERE calendarDate = ? AND inTrash = 0 ORDER BY pinned DESC, modifiedAt DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, date);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<List<Note>>() {
+      @Override
+      @NonNull
+      public List<Note> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfType = CursorUtil.getColumnIndexOrThrow(_cursor, "type");
+          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+          final int _cursorIndexOfBody = CursorUtil.getColumnIndexOrThrow(_cursor, "body");
+          final int _cursorIndexOfColor = CursorUtil.getColumnIndexOrThrow(_cursor, "color");
+          final int _cursorIndexOfPinned = CursorUtil.getColumnIndexOrThrow(_cursor, "pinned");
+          final int _cursorIndexOfArchived = CursorUtil.getColumnIndexOrThrow(_cursor, "archived");
+          final int _cursorIndexOfInTrash = CursorUtil.getColumnIndexOrThrow(_cursor, "inTrash");
+          final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfModifiedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "modifiedAt");
+          final int _cursorIndexOfDeletedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "deletedAt");
+          final int _cursorIndexOfReminderAt = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderAt");
+          final int _cursorIndexOfPasswordHash = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordHash");
+          final int _cursorIndexOfPasswordSalt = CursorUtil.getColumnIndexOrThrow(_cursor, "passwordSalt");
+          final int _cursorIndexOfCalendarDate = CursorUtil.getColumnIndexOrThrow(_cursor, "calendarDate");
+          final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Note _item;
+            final long _tmpId;
+            _tmpId = _cursor.getLong(_cursorIndexOfId);
+            final NoteType _tmpType;
+            _tmpType = __NoteType_stringToEnum(_cursor.getString(_cursorIndexOfType));
+            final String _tmpTitle;
+            _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+            final String _tmpBody;
+            _tmpBody = _cursor.getString(_cursorIndexOfBody);
+            final String _tmpColor;
+            _tmpColor = _cursor.getString(_cursorIndexOfColor);
+            final boolean _tmpPinned;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfPinned);
+            _tmpPinned = _tmp != 0;
+            final boolean _tmpArchived;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfArchived);
+            _tmpArchived = _tmp_1 != 0;
+            final boolean _tmpInTrash;
+            final int _tmp_2;
+            _tmp_2 = _cursor.getInt(_cursorIndexOfInTrash);
+            _tmpInTrash = _tmp_2 != 0;
+            final long _tmpCreatedAt;
+            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
+            final long _tmpModifiedAt;
+            _tmpModifiedAt = _cursor.getLong(_cursorIndexOfModifiedAt);
+            final Long _tmpDeletedAt;
+            if (_cursor.isNull(_cursorIndexOfDeletedAt)) {
+              _tmpDeletedAt = null;
+            } else {
+              _tmpDeletedAt = _cursor.getLong(_cursorIndexOfDeletedAt);
+            }
+            final Long _tmpReminderAt;
+            if (_cursor.isNull(_cursorIndexOfReminderAt)) {
+              _tmpReminderAt = null;
+            } else {
+              _tmpReminderAt = _cursor.getLong(_cursorIndexOfReminderAt);
+            }
+            final String _tmpPasswordHash;
+            if (_cursor.isNull(_cursorIndexOfPasswordHash)) {
+              _tmpPasswordHash = null;
+            } else {
+              _tmpPasswordHash = _cursor.getString(_cursorIndexOfPasswordHash);
+            }
+            final String _tmpPasswordSalt;
+            if (_cursor.isNull(_cursorIndexOfPasswordSalt)) {
+              _tmpPasswordSalt = null;
+            } else {
+              _tmpPasswordSalt = _cursor.getString(_cursorIndexOfPasswordSalt);
+            }
+            final Long _tmpCalendarDate;
+            if (_cursor.isNull(_cursorIndexOfCalendarDate)) {
+              _tmpCalendarDate = null;
+            } else {
+              _tmpCalendarDate = _cursor.getLong(_cursorIndexOfCalendarDate);
+            }
+            _item = new Note(_tmpId,_tmpType,_tmpTitle,_tmpBody,_tmpColor,_tmpPinned,_tmpArchived,_tmpInTrash,_tmpCreatedAt,_tmpModifiedAt,_tmpDeletedAt,_tmpReminderAt,_tmpPasswordHash,_tmpPasswordSalt,_tmpCalendarDate);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Flow<List<Long>> observeCalendarDates() {
+    final String _sql = "SELECT DISTINCT calendarDate FROM notes WHERE calendarDate IS NOT NULL AND inTrash = 0";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<List<Long>>() {
+      @Override
+      @NonNull
+      public List<Long> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final List<Long> _result = new ArrayList<Long>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Long _item;
+            _item = _cursor.getLong(0);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @Override

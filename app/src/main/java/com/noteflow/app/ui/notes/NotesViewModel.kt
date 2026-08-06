@@ -7,7 +7,7 @@ import com.noteflow.app.data.NotesRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-enum class NotesTab { ACTIVE, ARCHIVED, TRASH, BIRTHDAYS }
+enum class NotesTab { ACTIVE, ARCHIVED, TRASH, BIRTHDAYS, CALENDAR }
 
 class NotesViewModel(private val repository: NotesRepository) : ViewModel() {
 
@@ -39,6 +39,7 @@ class NotesViewModel(private val repository: NotesRepository) : ViewModel() {
     }.flatMapLatest { (tab, query, label) ->
         when {
             tab == NotesTab.BIRTHDAYS -> flowOf(emptyList())
+            tab == NotesTab.CALENDAR -> flowOf(emptyList())
             query.isNotBlank() -> repository.search(query)
             label != null -> repository.notesByLabel(label)
             tab == NotesTab.ACTIVE -> repository.activeNotes()

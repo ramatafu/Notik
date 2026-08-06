@@ -11,23 +11,26 @@ import androidx.compose.ui.graphics.Color
 
 /**
  * Strictly black/white/gray — no purple, no Material You dynamic wallpaper colors.
- * Per explicit request: the accent (primary) is white in light theme and black in
- * dark theme; every other role is overridden too, since Compose's lightColorScheme()/
- * darkColorScheme() otherwise fall back to Material3's default purple-tinted palette
- * for everything you don't explicitly set (which is why purple kept showing up even
- * after only overriding "primary").
+ *
+ * primary is the *contrasting* tone (black on light, white on dark) — not the same
+ * color as the background. Material3's default TextButton/AlertDialog action colors
+ * (e.g. "Установить"/"Отмена") are drawn using `colorScheme.primary` by default; an
+ * earlier version of this theme set primary equal to the background color, which
+ * made every one of those buttons invisible throughout the app. The text cursor
+ * defaults from `primary` too, which is why the fix for readable dialog buttons and
+ * the fix for an invisible cursor share this one root cause.
  */
 private val LightColors = lightColorScheme(
-    primary = Color.White,
-    onPrimary = Color.Black,
+    primary = Color.Black,
+    onPrimary = Color.White,
     primaryContainer = Color(0xFFEDEDED),
     onPrimaryContainer = Color.Black,
-    secondary = Color.White,
-    onSecondary = Color.Black,
+    secondary = Color.Black,
+    onSecondary = Color.White,
     secondaryContainer = Color(0xFFEDEDED),
     onSecondaryContainer = Color.Black,
-    tertiary = Color.White,
-    onTertiary = Color.Black,
+    tertiary = Color.Black,
+    onTertiary = Color.White,
     tertiaryContainer = Color(0xFFEDEDED),
     onTertiaryContainer = Color.Black,
     background = Color.White,
@@ -40,16 +43,16 @@ private val LightColors = lightColorScheme(
 )
 
 private val DarkColors = darkColorScheme(
-    primary = Color.Black,
-    onPrimary = Color.White,
+    primary = Color.White,
+    onPrimary = Color.Black,
     primaryContainer = Color(0xFF2A2A2A),
     onPrimaryContainer = Color.White,
-    secondary = Color.Black,
-    onSecondary = Color.White,
+    secondary = Color.White,
+    onSecondary = Color.Black,
     secondaryContainer = Color(0xFF2A2A2A),
     onSecondaryContainer = Color.White,
-    tertiary = Color.Black,
-    onTertiary = Color.White,
+    tertiary = Color.White,
+    onTertiary = Color.Black,
     tertiaryContainer = Color(0xFF2A2A2A),
     onTertiaryContainer = Color.White,
     background = Color.Black,

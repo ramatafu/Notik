@@ -231,6 +231,7 @@ private fun AddBirthdayDialog(initial: PickedContact?, onConfirm: (Birthday) -> 
                     onValueChange = { name = it },
                     label = { Text("Имя") },
                     singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed),
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(Modifier.height(12.dp))

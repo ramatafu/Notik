@@ -53,7 +53,7 @@ fun LabelsScreen(onBack: () -> Unit) {
         AlertDialog(
             onDismissRequest = { editing = null },
             title = { Text("Переименовать метку") },
-            text = { OutlinedTextField(value = editValue, onValueChange = { editValue = it }) },
+            text = { OutlinedTextField(value = editValue, onValueChange = { editValue = it }, colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed)) },
             confirmButton = {
                 TextButton(onClick = { viewModel.rename(oldName, editValue); editing = null }) { Text("Сохранить") }
             },

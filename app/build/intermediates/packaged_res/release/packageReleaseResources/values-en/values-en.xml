@@ -24,6 +24,7 @@
     <string name="notes_tab_active">Notes</string>
     <string name="notes_tab_archived">Archive</string>
     <string name="notes_tab_birthdays">Birthdays</string>
+    <string name="notes_tab_calendar">Calendar</string>
     <string name="notes_tab_trash">Trash</string>
     <string name="reminder_channel_name">Note reminders</string>
     <string name="settings_about">About</string>

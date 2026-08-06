@@ -23,6 +23,8 @@ class NotesRepository(context: Context) {
     fun notesByLabel(label: String): Flow<List<Note>> = noteDao.observeNotesByLabel(label)
     fun search(query: String): Flow<List<Note>> = noteDao.searchNotes(query)
     fun observeNote(id: Long): Flow<Note?> = noteDao.observeNote(id)
+    fun notesForDate(date: Long): Flow<List<Note>> = noteDao.observeNotesForDate(date)
+    fun calendarDates(): Flow<List<Long>> = noteDao.observeCalendarDates()
 
     /** One-shot full read of a note plus its checklist/images/labels — used by the editor screen. */
     suspend fun loadFullNote(noteId: Long): NoteWithExtras? {

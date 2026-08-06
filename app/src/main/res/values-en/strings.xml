@@ -11,6 +11,7 @@
     <string name="notes_tab_archived">Archive</string>
     <string name="notes_tab_trash">Trash</string>
     <string name="notes_tab_birthdays">Birthdays</string>
+    <string name="notes_tab_calendar">Calendar</string>
     <string name="notes_search_placeholder">Search notes…</string>
     <string name="notes_menu_cd">Menu</string>
     <string name="fab_new_list">List</string>

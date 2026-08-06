@@ -29,13 +29,14 @@ import com.noteflow.app.R
 import com.noteflow.app.data.Note
 import com.noteflow.app.ui.ViewModelFactory
 import com.noteflow.app.ui.birthdays.BirthdaysScreen
+import com.noteflow.app.ui.calendar.CalendarScreen
 import com.noteflow.app.ui.editor.parseMarkupToAnnotatedString
 import com.noteflow.app.ui.theme.colorForKey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NotesListScreen(
-    onOpenNote: (Long, Boolean) -> Unit,
+    onOpenNote: (Long, Boolean, Long) -> Unit,
     onOpenLabels: () -> Unit,
     onOpenSettings: () -> Unit,
     onOpenBooks: () -> Unit
@@ -73,12 +74,14 @@ fun NotesListScreen(
     val archivedLabel = stringResource(R.string.notes_tab_archived)
     val trashLabel = stringResource(R.string.notes_tab_trash)
     val birthdaysLabel = stringResource(R.string.notes_tab_birthdays)
+    val calendarLabel = stringResource(R.string.notes_tab_calendar)
 
     val currentSectionTitle = when (tab) {
         NotesTab.ACTIVE -> stringResource(R.string.tab_with_count, activeLabel, activeCount)
         NotesTab.ARCHIVED -> stringResource(R.string.tab_with_count, archivedLabel, archivedCount)
         NotesTab.TRASH -> stringResource(R.string.tab_with_count, trashLabel, trashedCount)
         NotesTab.BIRTHDAYS -> birthdaysLabel
+        NotesTab.CALENDAR -> calendarLabel
     }
 
     Scaffold(
@@ -86,13 +89,13 @@ fun NotesListScreen(
             if (tab == NotesTab.ACTIVE) {
                 Column(horizontalAlignment = Alignment.End) {
                     ExtendedFloatingActionButton(
-                        onClick = { onOpenNote(0, true) },
+                        onClick = { onOpenNote(0, true, 0L) },
                         icon = { Icon(Icons.Default.Checklist, contentDescription = null) },
                         text = { Text(stringResource(R.string.fab_new_list)) }
                     )
                     Spacer(Modifier.height(12.dp))
                     ExtendedFloatingActionButton(
-                        onClick = { onOpenNote(0, false) },
+                        onClick = { onOpenNote(0, false, 0L) },
                         icon = { Icon(Icons.Default.Add, contentDescription = null) },
                         text = { Text(stringResource(R.string.fab_new_note)) }
                     )
@@ -122,13 +125,14 @@ fun NotesListScreen(
                 )
             }
 
-            if (tab != NotesTab.BIRTHDAYS) {
+            if (tab != NotesTab.BIRTHDAYS && tab != NotesTab.CALENDAR) {
                 Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                     OutlinedTextField(
                         value = query,
                         onValueChange = viewModel::setQuery,
                         placeholder = { Text(stringResource(R.string.notes_search_placeholder)) },
                         singleLine = true,
+                        colors = OutlinedTextFieldDefaults.colors(cursorColor = com.noteflow.app.ui.theme.AccentRed),
                         modifier = Modifier
                             .weight(1f)
                             .padding(start = 16.dp, top = 8.dp, bottom = 8.dp, end = if (tab == NotesTab.TRASH) 8.dp else 16.dp)
@@ -144,6 +148,10 @@ fun NotesListScreen(
             if (tab == NotesTab.BIRTHDAYS) {
                 Box(Modifier.weight(1f).fillMaxWidth()) {
                     BirthdaysScreen()
+                }
+            } else if (tab == NotesTab.CALENDAR) {
+                Box(Modifier.weight(1f).fillMaxWidth()) {
+                    CalendarScreen(onOpenNote = { noteId, date -> onOpenNote(noteId, false, date) })
                 }
             } else {
                 if (labelFilter != null) {
@@ -169,7 +177,7 @@ fun NotesListScreen(
                         items(notes, key = { it.id }) { note ->
                             NoteCard(
                                 note = note,
-                                onClick = { onOpenNote(note.id, note.type == com.noteflow.app.data.NoteType.LIST) },
+                                onClick = { onOpenNote(note.id, note.type == com.noteflow.app.data.NoteType.LIST, 0L) },
                                 onTogglePin = { viewModel.togglePin(note) },
                                 onArchive = { if (tab == NotesTab.ARCHIVED) viewModel.unarchive(note) else viewModel.archive(note) },
                                 onTrash = { if (tab == NotesTab.TRASH) viewModel.restore(note) else viewModel.moveToTrash(note) },
@@ -204,9 +212,13 @@ fun NotesListScreen(
 
                 Divider(Modifier.padding(vertical = 8.dp))
 
-                // Group 2: birthdays, on its own.
+                // Group 2: birthdays and calendar, on their own.
                 MenuTabRow(label = birthdaysLabel, selected = tab == NotesTab.BIRTHDAYS) {
                     viewModel.selectTab(NotesTab.BIRTHDAYS)
+                    drawerOpen = false
+                }
+                MenuTabRow(label = calendarLabel, selected = tab == NotesTab.CALENDAR) {
+                    viewModel.selectTab(NotesTab.CALENDAR)
                     drawerOpen = false
                 }
 

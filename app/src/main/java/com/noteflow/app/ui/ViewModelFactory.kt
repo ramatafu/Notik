@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.noteflow.app.NoteFlowApp
 import com.noteflow.app.ui.birthdays.BirthdaysViewModel
+import com.noteflow.app.ui.calendar.CalendarViewModel
 import com.noteflow.app.ui.editor.EditorViewModel
 import com.noteflow.app.ui.labels.LabelsViewModel
 import com.noteflow.app.ui.notes.NotesViewModel
@@ -18,6 +19,7 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
         EditorViewModel::class.java -> EditorViewModel(app.repository, context.applicationContext, app.settingsRepository) as T
         LabelsViewModel::class.java -> LabelsViewModel(app.repository) as T
         BirthdaysViewModel::class.java -> BirthdaysViewModel(app.birthdaysRepository, context.applicationContext) as T
+        CalendarViewModel::class.java -> CalendarViewModel(app.repository) as T
         else -> throw IllegalArgumentException("Unknown ViewModel: $modelClass")
     }
 }

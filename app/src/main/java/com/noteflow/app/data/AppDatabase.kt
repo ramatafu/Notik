@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Note::class, ChecklistItem::class, NoteImage::class, Label::class, NoteLabelCrossRef::class, Birthday::class],
-    version = 3,
+    version = 4,
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -55,6 +55,17 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v3 -> v4: adds the "calendarDate" column on "notes" (linking a note to a
+         * specific day for the Calendar feature). One ALTER TABLE ADD COLUMN —
+         * nothing else changes, every existing note survives untouched.
+         */
+        private val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `notes` ADD COLUMN `calendarDate` INTEGER")
+            }
+        }
+
         fun getInstance(context: Context): AppDatabase =
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
@@ -62,7 +73,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "noteflow.db"
                 )
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
                     // Downgrading (reinstalling an older build over a newer DB) is rare
                     // and not something we promise to preserve — but a normal *upgrade*
                     // never wipes data now that explicit migrations exist above.

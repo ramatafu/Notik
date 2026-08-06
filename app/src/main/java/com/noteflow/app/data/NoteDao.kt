@@ -71,6 +71,13 @@ interface NoteDao {
     @Query("SELECT * FROM notes WHERE reminderAt IS NOT NULL AND inTrash = 0")
     suspend fun notesWithReminders(): List<Note>
 
+    // --- calendar ---
+    @Query("SELECT * FROM notes WHERE calendarDate = :date AND inTrash = 0 ORDER BY pinned DESC, modifiedAt DESC")
+    fun observeNotesForDate(date: Long): Flow<List<Note>>
+
+    @Query("SELECT DISTINCT calendarDate FROM notes WHERE calendarDate IS NOT NULL AND inTrash = 0")
+    fun observeCalendarDates(): Flow<List<Long>>
+
     // --- checklist items ---
     @Query("DELETE FROM checklist_items WHERE noteId = :noteId")
     suspend fun clearChecklist(noteId: Long)

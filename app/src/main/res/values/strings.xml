@@ -11,6 +11,7 @@
     <string name="notes_tab_archived">Архив</string>
     <string name="notes_tab_trash">Корзина</string>
     <string name="notes_tab_birthdays">Дни рождения</string>
+    <string name="notes_tab_calendar">Календарь</string>
     <string name="notes_search_placeholder">Поиск по заметкам…</string>
     <string name="notes_menu_cd">Меню</string>
     <string name="fab_new_list">Список</string>

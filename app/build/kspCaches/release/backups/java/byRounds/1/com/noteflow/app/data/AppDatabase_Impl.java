@@ -35,17 +35,17 @@ public final class AppDatabase_Impl extends AppDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(3) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `notes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, `color` TEXT NOT NULL, `pinned` INTEGER NOT NULL, `archived` INTEGER NOT NULL, `inTrash` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `modifiedAt` INTEGER NOT NULL, `deletedAt` INTEGER, `reminderAt` INTEGER, `passwordHash` TEXT, `passwordSalt` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `notes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `title` TEXT NOT NULL, `body` TEXT NOT NULL, `color` TEXT NOT NULL, `pinned` INTEGER NOT NULL, `archived` INTEGER NOT NULL, `inTrash` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `modifiedAt` INTEGER NOT NULL, `deletedAt` INTEGER, `reminderAt` INTEGER, `passwordHash` TEXT, `passwordSalt` TEXT, `calendarDate` INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `checklist_items` (`noteId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `text` TEXT NOT NULL, `checked` INTEGER NOT NULL, PRIMARY KEY(`noteId`, `position`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `note_images` (`noteId` INTEGER NOT NULL, `position` INTEGER NOT NULL, `uri` TEXT NOT NULL, PRIMARY KEY(`noteId`, `position`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `labels` (`name` TEXT NOT NULL, PRIMARY KEY(`name`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `note_label_cross_ref` (`noteId` INTEGER NOT NULL, `labelName` TEXT NOT NULL, PRIMARY KEY(`noteId`, `labelName`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS `birthdays` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `contactId` TEXT, `name` TEXT NOT NULL, `photoUri` TEXT, `month` INTEGER NOT NULL, `day` INTEGER NOT NULL, `year` INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b83d148aaf7b847745464e0dae06b4b7')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd8f44844ea23818d769c787b5f0c087d')");
       }
 
       @Override
@@ -99,7 +99,7 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsNotes = new HashMap<String, TableInfo.Column>(14);
+        final HashMap<String, TableInfo.Column> _columnsNotes = new HashMap<String, TableInfo.Column>(15);
         _columnsNotes.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("type", new TableInfo.Column("type", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -114,6 +114,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsNotes.put("reminderAt", new TableInfo.Column("reminderAt", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("passwordHash", new TableInfo.Column("passwordHash", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsNotes.put("passwordSalt", new TableInfo.Column("passwordSalt", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotes.put("calendarDate", new TableInfo.Column("calendarDate", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysNotes = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesNotes = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoNotes = new TableInfo("notes", _columnsNotes, _foreignKeysNotes, _indicesNotes);
@@ -192,7 +193,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "b83d148aaf7b847745464e0dae06b4b7", "c4a5325d1e31b3ce4d854d2832534740");
+    }, "d8f44844ea23818d769c787b5f0c087d", "6154bc838540ffeafc822c22dca55ccc");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

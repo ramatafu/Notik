@@ -35,6 +35,7 @@ data class EditorState(
     val reminderAt: Long? = null,
     val passwordHash: String? = null,
     val passwordSalt: String? = null,
+    val calendarDate: Long? = null,
     // Session-only: true once the correct password has been entered this time
     // around. Always true for notes with no password. Resets every time you
     // navigate away and back into a locked note.
@@ -53,16 +54,17 @@ class EditorViewModel(
     private val _state = MutableStateFlow(EditorState())
     val state: StateFlow<EditorState> = _state.asStateFlow()
 
-    fun load(noteId: Long, forceListType: Boolean = false) {
+    fun load(noteId: Long, forceListType: Boolean = false, initialCalendarDate: Long? = null) {
         if (noteId == 0L) {
             _state.value = if (forceListType) {
                 EditorState(
                     type = NoteType.LIST,
                     checklist = listOf(ChecklistItem(noteId = 0, position = 0)),
+                    calendarDate = initialCalendarDate,
                     loaded = true
                 )
             } else {
-                EditorState(loaded = true)
+                EditorState(calendarDate = initialCalendarDate, loaded = true)
             }
             return
         }
@@ -85,6 +87,7 @@ class EditorViewModel(
                     reminderAt = full.note.reminderAt,
                     passwordHash = full.note.passwordHash,
                     passwordSalt = full.note.passwordSalt,
+                    calendarDate = full.note.calendarDate,
                     unlocked = full.note.passwordHash == null,
                     loaded = true
                 )
@@ -100,6 +103,7 @@ class EditorViewModel(
     fun updateLabels(labels: List<String>) { _state.value = _state.value.copy(labels = labels) }
     fun updateChecklist(items: List<ChecklistItem>) { _state.value = _state.value.copy(checklist = items) }
     fun updateReminder(atMillis: Long?) { _state.value = _state.value.copy(reminderAt = atMillis) }
+    fun updateCalendarDate(date: Long?) { _state.value = _state.value.copy(calendarDate = date) }
 
     /**
      * Copies the picked image into the app's own private storage before storing a
@@ -191,7 +195,8 @@ class EditorViewModel(
             reminderAt = s.reminderAt,
             modifiedAt = System.currentTimeMillis(),
             passwordHash = s.passwordHash,
-            passwordSalt = s.passwordSalt
+            passwordSalt = s.passwordSalt,
+            calendarDate = s.calendarDate
         )
         val id = repository.saveNote(note, s.checklist, s.images, s.labels)
         val savedNote = note.copy(id = id)
