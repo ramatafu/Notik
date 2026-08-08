@@ -105,8 +105,9 @@ fun NotesListScreen(
     ) { padding ->
         Column(Modifier.padding(padding)) {
 
-            // Top row: hamburger menu (now also holds the section switcher) + current
-            // section name on the left, app name on the right.
+            // Top row: hamburger menu (still holds Notes/Archive/Trash/Labels/Settings) +
+            // current section name on the left; quick-access icons for Calendar, Birthdays
+            // and (when enabled in Settings) Books, next to the app name on the right.
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                 IconButton(onClick = { drawerOpen = true }) {
                     Icon(Icons.Default.Menu, contentDescription = stringResource(R.string.notes_menu_cd))
@@ -114,14 +115,32 @@ fun NotesListScreen(
                 Text(
                     currentSectionTitle,
                     style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.padding(start = 4.dp)
+                    modifier = Modifier.padding(start = 4.dp).weight(1f)
                 )
-                Spacer(Modifier.weight(1f))
+                IconButton(onClick = { viewModel.selectTab(NotesTab.CALENDAR) }) {
+                    Icon(
+                        Icons.Default.CalendarMonth,
+                        contentDescription = calendarLabel,
+                        tint = if (tab == NotesTab.CALENDAR) com.noteflow.app.ui.theme.AccentRed else LocalContentColor.current
+                    )
+                }
+                IconButton(onClick = { viewModel.selectTab(NotesTab.BIRTHDAYS) }) {
+                    Icon(
+                        Icons.Default.Cake,
+                        contentDescription = birthdaysLabel,
+                        tint = if (tab == NotesTab.BIRTHDAYS) com.noteflow.app.ui.theme.AccentRed else LocalContentColor.current
+                    )
+                }
+                if (booksEnabled) {
+                    IconButton(onClick = onOpenBooks) {
+                        Icon(Icons.Default.MenuBook, contentDescription = stringResource(R.string.label_books))
+                    }
+                }
                 Text(
                     stringResource(R.string.app_name),
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.padding(end = 16.dp)
+                    modifier = Modifier.padding(start = 4.dp, end = 16.dp)
                 )
             }
 
@@ -212,19 +231,7 @@ fun NotesListScreen(
 
                 Divider(Modifier.padding(vertical = 8.dp))
 
-                // Group 2: birthdays and calendar, on their own.
-                MenuTabRow(label = birthdaysLabel, selected = tab == NotesTab.BIRTHDAYS) {
-                    viewModel.selectTab(NotesTab.BIRTHDAYS)
-                    drawerOpen = false
-                }
-                MenuTabRow(label = calendarLabel, selected = tab == NotesTab.CALENDAR) {
-                    viewModel.selectTab(NotesTab.CALENDAR)
-                    drawerOpen = false
-                }
-
-                Divider(Modifier.padding(vertical = 8.dp))
-
-                // Group 3: labels.
+                // Group 2: labels.
                 Text(stringResource(R.string.menu_labels_title), style = MaterialTheme.typography.titleMedium)
                 labels.forEach { label ->
                     Text(
@@ -244,19 +251,9 @@ fun NotesListScreen(
                     modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenLabels() }.padding(vertical = 12.dp)
                 )
 
-                if (booksEnabled) {
-                    Divider(Modifier.padding(vertical = 8.dp))
-
-                    // Group 3b: experimental "Books" feature, only shown when enabled in Settings.
-                    Text(
-                        stringResource(R.string.label_books),
-                        modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenBooks() }.padding(vertical = 12.dp)
-                    )
-                }
-
                 Divider(Modifier.padding(vertical = 8.dp))
 
-                // Group 4: settings.
+                // Group 3: settings.
                 Text(
                     stringResource(R.string.menu_settings),
                     modifier = Modifier.fillMaxWidth().clickable { drawerOpen = false; onOpenSettings() }.padding(vertical = 12.dp)

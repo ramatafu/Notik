@@ -54,6 +54,11 @@ class EditorViewModel(
     private val _state = MutableStateFlow(EditorState())
     val state: StateFlow<EditorState> = _state.asStateFlow()
 
+    // Snapshot taken right after loading (or right after any successful persist) —
+    // used to detect "nothing actually changed" so a plain open-and-leave never
+    // bumps modifiedAt and reshuffles the note's position in the list.
+    private var baseline: EditorState = EditorState()
+
     fun load(noteId: Long, forceListType: Boolean = false, initialCalendarDate: Long? = null) {
         if (noteId == 0L) {
             _state.value = if (forceListType) {
@@ -66,6 +71,7 @@ class EditorViewModel(
             } else {
                 EditorState(calendarDate = initialCalendarDate, loaded = true)
             }
+            baseline = _state.value
             return
         }
         viewModelScope.launch {
@@ -94,6 +100,7 @@ class EditorViewModel(
             } else {
                 _state.value = EditorState(loaded = true)
             }
+            baseline = _state.value
         }
     }
 
@@ -172,10 +179,31 @@ class EditorViewModel(
             onSaved(s.id) // nothing to persist, but the caller (e.g. the back button) must still proceed
             return@launch
         }
+        if (isUnchanged(s, baseline)) {
+            onSaved(s.id) // opened and left without editing — don't bump modifiedAt or reorder the list
+            return@launch
+        }
 
         val id = persistNow()
         onSaved(id)
     }
+
+    /** True when nothing the user could have edited actually differs from what was loaded. */
+    private fun isUnchanged(a: EditorState, b: EditorState): Boolean =
+        a.type == b.type &&
+            a.title == b.title &&
+            a.body == b.body &&
+            a.color == b.color &&
+            a.pinned == b.pinned &&
+            a.archived == b.archived &&
+            a.inTrash == b.inTrash &&
+            a.checklist == b.checklist &&
+            a.images == b.images &&
+            a.labels == b.labels &&
+            a.reminderAt == b.reminderAt &&
+            a.passwordHash == b.passwordHash &&
+            a.passwordSalt == b.passwordSalt &&
+            a.calendarDate == b.calendarDate
 
     /** Builds a Note from the current state and writes it through the repository. Always includes
      *  the password fields and the archived/trash state, so a regular save() never accidentally
@@ -201,6 +229,7 @@ class EditorViewModel(
         val id = repository.saveNote(note, s.checklist, s.images, s.labels)
         val savedNote = note.copy(id = id)
         _state.value = _state.value.copy(id = id)
+        baseline = _state.value
         if (s.reminderAt != null) ReminderScheduler.schedule(appContext, savedNote) else ReminderScheduler.cancel(appContext, id)
         return id
     }

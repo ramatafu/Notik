@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="ic_launcher_background">#C81818</color>
     <string name="app_name">Notik</string>
     <string name="birthday_channel_name">Напоминания о днях рождения</string>
     <string name="clear_trash">Очистить корзину</string>
